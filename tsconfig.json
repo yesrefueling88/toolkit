@@ -21,7 +21,15 @@
     "typeRoots": [
       "node_modules/@types",
       "global.d.ts"
-    ]
+    ],
+    "paths": {
+      "@actions": [
+        "src/actions/"
+      ],
+      "@actions/*": [
+        "src/actions/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",

@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-commonjs
+const path = require("path");
+
 const config = {
   projectName: 'toolkit',
   date: '2021-11-20',
@@ -11,6 +14,9 @@ const config = {
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {
+  },
+  alias: {
+    "@actions": path.resolve(__dirname, "..", "src/actions"),
   },
   copy: {
     patterns: [
