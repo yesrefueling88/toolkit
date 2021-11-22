@@ -15,4 +15,8 @@ declare const process: {
     TARO_ENV: 'weapp' | 'swan' | 'alipay' | 'h5' | 'rn' | 'tt' | 'quickapp' | 'qq' | 'jd';
     [key: string]: any;
   }
-}
+};
+
+declare const IS_H5: any;
+declare const IS_WEAPP: any;
+declare const IS_RN: any;

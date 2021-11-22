@@ -14,6 +14,9 @@ const config = {
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {
+    IS_H5: process.env.TARO_ENV === "h5",
+    IS_RN: process.env.TARO_ENV === "rn",
+    IS_WEAPP: process.env.TARO_ENV === "weapp"
   },
   alias: {
     "@actions": path.resolve(__dirname, "..", "src/actions"),

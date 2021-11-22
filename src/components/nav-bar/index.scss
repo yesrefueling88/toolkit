@@ -1,0 +1,60 @@
+@import "../../pages/index/index";
+.c-nav-bar {
+  width: 100%;
+  height: 90px;
+  background-color: #333333;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+
+    &-img {
+      width: 90%;
+      height: 90%;
+    }
+  }
+
+  &-title {
+    margin-left: 15px;
+
+    &-text {
+      color: #ffffff;
+      font-size: 36px;
+      display: table-cell;
+      vertical-align: middle
+    }
+  }
+
+  &-more-options {
+    position: absolute;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-icon {
+      display: inline-block;
+      width: 40px;
+      height: 3px;
+      padding: 10px 0;
+      border-top: 3px solid;
+      border-bottom: 3px solid;
+      color: #ffffff;
+      background-color: currentColor;
+      background-clip: content-box;
+    }
+  }
+}
