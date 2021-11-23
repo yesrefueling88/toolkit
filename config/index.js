@@ -11,7 +11,7 @@ const config = {
     828: 1.81 / 2
   },
   sourceRoot: 'src',
-  outputRoot: 'dist',
+  outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [],
   defineConstants: {
     IS_H5: process.env.TARO_ENV === "h5",
@@ -20,6 +20,13 @@ const config = {
   },
   alias: {
     "@actions": path.resolve(__dirname, "..", "src/actions"),
+    "@assets": path.resolve(__dirname, "..", "src/assets"),
+    "@components": path.resolve(__dirname, "..", "src/components"),
+    "@constants": path.resolve(__dirname, "..", "src/constants"),
+    "@pages": path.resolve(__dirname, "..", "src/pages"),
+    "@reducers": path.resolve(__dirname, "..", "src/reducers"),
+    "@utils": path.resolve(__dirname, "..", "src/utils"),
+    "@style": path.resolve(__dirname, "..", "src/style"),
   },
   copy: {
     patterns: [

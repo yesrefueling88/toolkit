@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: '工具箱'
+  navigationBarTitleText: '工具箱',
+  navigationStyle: 'custom'
 }
