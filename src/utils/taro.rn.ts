@@ -7,3 +7,14 @@ export const initNavBarInfo = (): { success: boolean, data: NavBarInfo | null, m
     msg: 'RN不支持此API'
   }
 };
+
+// @ts-ignore
+export const createSelectorQuery = (key: string) => {
+  return new Promise((reject) => {
+    reject({
+      success: false,
+      data: null,
+      msg: 'RN不支持此API'
+    })
+  })
+}

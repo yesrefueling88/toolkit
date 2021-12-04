@@ -1,0 +1,11 @@
+.c-menu-panels {
+  flex: 1;
+  background-color: #ffffff;
+
+  &-scroll-view {
+    height: 100%;
+    /* #ifdef rn */
+    height: 0;
+    /* #endif */
+  }
+}

@@ -1,0 +1,13 @@
+@import '@style/index';
+
+.c-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 60px;
+  background-color: chartreuse;
+  padding: 0px 20px;
+  @include box-sizing-border-box();
+  font-size: 30px;
+}
