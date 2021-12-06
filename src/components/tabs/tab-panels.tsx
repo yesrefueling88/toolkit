@@ -9,7 +9,7 @@ type Props = {
 
 // @ts-ignore
 const TabPanels: any = forwardRef((props: Props, ref) => {
-  let { children, selectedIndex } = props;
+  const { children, selectedIndex } = props;
 
   return (
     <View className='c-tab-panels'>

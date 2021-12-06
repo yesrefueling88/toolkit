@@ -2,15 +2,23 @@ import React, { forwardRef, ReactElement, useState } from "react";
 import { View } from '@tarojs/components'
 import './menu.scss'
 
-let anchorMap = new Map<number, { top: number, height: number }>();
+type Props = {
+  children: Array<ReactElement>,
+  style?: string,
+  scrollOffSet?: number,
+}
 
 // @ts-ignore
-const Menu: any = forwardRef((props: { children: Array<ReactElement> }, ref) => {
-  let { children } = props;
-  let [selectedIndex, setIndex] = useState(0);
+const Menu: any = forwardRef((props: Props, ref) => {
+  const { children, style = '', scrollOffSet = 0 } = props;
+  const [selectedIndex, setIndex] = useState(0);
+  const [anchorMap] = useState(new Map<number, { top: number, height: number }>());
 
   return (
-    <View className='c-menu'>
+    <View
+      className='c-menu'
+      style={style}
+    >
       {children?.map((child, index) => {
         let porps;
         index === 0 && (porps = {
@@ -27,6 +35,7 @@ const Menu: any = forwardRef((props: { children: Array<ReactElement> }, ref) => 
           key: index,
           selectedIndex: selectedIndex,
           anchorMap: anchorMap,
+          scrollOffSet: scrollOffSet,
         });
 
         return React.cloneElement(child, porps)

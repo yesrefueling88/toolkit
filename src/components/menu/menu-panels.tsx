@@ -7,16 +7,17 @@ type Props = {
   children: Array<ReactElement>,
   selectedIndex: number,
   anchorMap: Map<number, { top: number, height: number }>,
+  scrollOffSet: number,
 }
 
 // @ts-ignore
 const MenuPanels: any = forwardRef((props: Props, ref) => {
-  let { children, selectedIndex, anchorMap, } = props;
-  let [scrollTop, setScrollTop] = useState(0);
+  let { children, selectedIndex, anchorMap, scrollOffSet = 0 } = props;
+  const [scrollTop, setScrollTop] = useState(0);
   let anchor = anchorMap.get(selectedIndex);
 
   useEffect(() => {
-    !IS_RN && anchorMap.size !== children.length && createSelectorQuery('.c-menu-panel').then((res: { success: boolean, data: Array<BoundingClientRectCallback>, msg: string }) => {
+    !IS_RN && createSelectorQuery('.c-menu-panel').then((res: { success: boolean, data: Array<BoundingClientRectCallback>, msg: string }) => {
       let { success, data } = res;
       if (success) {
         data.forEach(item => {
@@ -25,10 +26,10 @@ const MenuPanels: any = forwardRef((props: Props, ref) => {
         })
       }
     })
-  });
+  }, []);
 
-  if ((anchor != undefined) && (anchor.top != scrollTop)) {
-    setScrollTop(anchor.top);
+  if ((anchor != undefined) && (anchor.top - scrollOffSet != scrollTop)) {
+    setScrollTop(anchor.top - scrollOffSet);
   }
 
   return (

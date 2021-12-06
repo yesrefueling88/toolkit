@@ -11,7 +11,7 @@ type Props = {
 
 // @ts-ignore
 const MenuItem: any = forwardRef((props: Props, ref) => {
-  let { children, index, isSelected, onClick } = props;
+  const { children, index, isSelected, onClick } = props;
   //console.info(isSelected)
   return (
     <View className='c-menu-item' onClick={() => onClick(index)}>

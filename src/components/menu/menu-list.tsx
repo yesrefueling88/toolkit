@@ -10,7 +10,7 @@ type Props = {
 
 // @ts-ignore
 const MenuList: any = forwardRef((props: Props, ref) => {
-  let { children, selectedIndex, onSetSelectIndex } = props;
+  const { children, selectedIndex, onSetSelectIndex } = props;
 
   return (
     <View className='c-menu-list'>

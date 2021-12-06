@@ -4,8 +4,8 @@ import './tabs.scss'
 
 // @ts-ignore
 const Tabs: any = forwardRef((props: { children: Array<ReactElement> }, ref) => {
-  let { children } = props;
-  let [selectedIndex, setIndex] = useState(0);
+  const { children } = props;
+  const [selectedIndex, setIndex] = useState(0);
 
   return (
     <View className='c-tabs'>

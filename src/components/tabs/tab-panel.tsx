@@ -9,7 +9,7 @@ type Props = {
 
 // @ts-ignore
 const TabPanel: any = forwardRef((props: Props, ref) => {
-  let { isSelected, children } = props;
+  const { isSelected, children } = props;
 
   if (!isSelected) return null;
 
