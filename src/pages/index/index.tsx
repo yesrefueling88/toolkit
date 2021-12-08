@@ -35,36 +35,16 @@ const Index: React.FC<any> = () => {
           scrollOffSet={navHeight}
         >
           <MenuList>
-            <MenuItem>
-              <Text>工具分类1</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类2</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类3</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类4</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类5</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类6</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类7</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类8</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类9</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text>工具分类10</Text>
-            </MenuItem>
+            <MenuItem>推荐热门</MenuItem>
+            <MenuItem>工具榜单</MenuItem>
+            <MenuItem>视频音频</MenuItem>
+            <MenuItem>图形图形</MenuItem>
+            <MenuItem>日期时间</MenuItem>
+            <MenuItem>文字编辑</MenuItem>
+            <MenuItem>加密解密</MenuItem>
+            <MenuItem>编程开发</MenuItem>
+            <MenuItem>计算换算</MenuItem>
+            <MenuItem>生活日常</MenuItem>
           </MenuList>
           <MenuPanels>
             <MenuPanel><Text>content1</Text></MenuPanel>

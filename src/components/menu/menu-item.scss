@@ -5,9 +5,30 @@
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 60px;
-  background-color: chartreuse;
+  height: 80px;
   padding: 0px 20px;
   @include box-sizing-border-box();
-  font-size: 30px;
+  position: relative;
+
+  &-flag {
+    width: 5px;
+    height: 40%;
+    background-color: #333333;
+    position: absolute;
+    right: 0;
+  }
+
+  &-text {
+    font-size: 28px;
+    color: #828282;
+  }
+}
+
+.active {
+  background-color: rgb(249, 249, 249);
+}
+
+.text-active {
+  font-weight: 700;
+  color: #000000;
 }
