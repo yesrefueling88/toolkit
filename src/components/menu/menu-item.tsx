@@ -22,7 +22,7 @@ const MenuItem: any = forwardRef((props: Props, ref) => {
     >
       {isSelected && <View className='c-menu-item-flag'></View>}
       <Text
-        className={isSelected ? 'c-menu-item-text text-active' : 'c-menu-item-text'}
+        className={isSelected ? 'c-menu-item-text active-text' : 'c-menu-item-text'}
       >
         {children}
       </Text>
