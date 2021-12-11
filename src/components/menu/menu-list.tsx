@@ -4,15 +4,21 @@ import './menu-list.scss'
 
 type Props = {
   children: Array<ReactElement>,
-  selectedIndex: number,
-  onSetSelectIndex: Function,
-  style: string,
-  itemStyle: string,
+  selectedIndex: number,  // 当前选中的menuItem值
+  onSetSelectIndex: Function,  // 设置当前选中的menuItem值
+  style: string,  // CSS样式
+  itemStyle: string,  // 子元素CSS样式
 }
 
 // @ts-ignore
 const MenuList: any = forwardRef((props: Props, ref) => {
-  const { children, selectedIndex, onSetSelectIndex, style = '', itemStyle = '' } = props;
+  const {
+    children,
+    selectedIndex,
+    onSetSelectIndex,
+    style = '',
+    itemStyle = ''
+  } = props;
 
   return (
     <View

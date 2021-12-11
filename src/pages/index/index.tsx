@@ -47,16 +47,16 @@ const Index: React.FC<any> = () => {
             <MenuItem>生活日常</MenuItem>
           </MenuList>
           <MenuPanels>
-            <MenuPanel><Text>content1</Text></MenuPanel>
-            <MenuPanel><Text>content2</Text></MenuPanel>
-            <MenuPanel><Text>content3</Text></MenuPanel>
-            <MenuPanel><Text>content4</Text></MenuPanel>
-            <MenuPanel><Text>content5</Text></MenuPanel>
-            <MenuPanel><Text>content6</Text></MenuPanel>
-            <MenuPanel><Text>content7</Text></MenuPanel>
-            <MenuPanel><Text>content8</Text></MenuPanel>
-            <MenuPanel><Text>content9</Text></MenuPanel>
-            <MenuPanel><Text>content10</Text></MenuPanel>
+            <MenuPanel><View className='test1'><Text>推荐热门</Text></View></MenuPanel>
+            <MenuPanel><View className='test2'><Text>工具榜单</Text></View></MenuPanel>
+            <MenuPanel><View className='test3'><Text>视频音频</Text></View></MenuPanel>
+            <MenuPanel><View className='test1'><Text>图形图形</Text></View></MenuPanel>
+            <MenuPanel><View className='test2'><Text>日期时间</Text></View></MenuPanel>
+            <MenuPanel><View className='test3'><Text>文字编辑</Text></View></MenuPanel>
+            <MenuPanel><View className='test1'><Text>加密解密</Text></View></MenuPanel>
+            <MenuPanel><View className='test2'><Text>编程开发</Text></View></MenuPanel>
+            <MenuPanel><View className='test3'><Text>计算换算</Text></View></MenuPanel>
+            <MenuPanel><View className='test1'><Text>生活日常</Text></View></MenuPanel>
           </MenuPanels>
         </Menu>
       )}
