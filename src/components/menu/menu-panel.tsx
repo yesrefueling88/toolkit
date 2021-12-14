@@ -1,17 +1,18 @@
 import { forwardRef, memo, ReactElement } from "react";
-import { View } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import { MenuAnchorItem } from "@components/menu/menu";
 import './menu-panel.scss'
 
 type Props = {
   index: number,  // 当前索引
   children: Array<ReactElement>,
+  name: string,   // 名称
   anchorMap: Map<number, MenuAnchorItem>,  // menuItem的锚点对象映射
 }
 
 // @ts-ignore
 const MenuPanel: any = memo(forwardRef((props: Props, ref) => {
-  const { index, children, anchorMap } = props;
+  const { index, children, name = `工具${props.index + 1}`, anchorMap } = props;
 
   return (
     <View
@@ -28,6 +29,9 @@ const MenuPanel: any = memo(forwardRef((props: Props, ref) => {
         anchorMap.set(id, { top, bottom, width, height });
       }}
     >
+      <View className='c-menu-panel-name'>
+        <Text className='c-menu-panel-name-text'>{name}</Text>
+      </View>
       {children}
     </View>
   )

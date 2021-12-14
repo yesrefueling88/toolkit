@@ -28,6 +28,7 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
   let anchor = anchorMap.get(selectedIndex);
   if (selectedIndex != dataMap.get('selectedIndex') && anchor != undefined) {
     dataMap.set('scrollTop', anchor.top - scrollOffSet);
+    dataMap.set('selectedIndex', selectedIndex);
   }
 
   useEffect(() => {
@@ -53,6 +54,12 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
         scrollTop={dataMap.get('scrollTop')}
         onScroll={debounce((e) => {
           let { detail: { scrollTop: top } } = e;
+
+          let currentScrollTop = dataMap.get('scrollTop') != undefined
+            ? dataMap.get('scrollTop')
+            : -1;
+
+          if (currentScrollTop != -1 && Math.abs(currentScrollTop! - top) < 5) return;
 
           // 计算当前滚动位置对对应于哪个menuItem
           let anchorArr = Array.from(anchorMap.values());

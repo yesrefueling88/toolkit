@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import Menu from "@components/menu/menu";
 import MenuList from "@components/menu/menu-list";
@@ -7,6 +7,7 @@ import MenuPanels from "@components/menu/menu-panels";
 import MenuItem from "@components/menu/menu-item";
 import MenuPanel from "@components/menu/menu-panel";
 import { createSelectorQuery } from "@utils/taro";
+import ToolsItem from "@components/tools/item";
 import './index.scss'
 
 const Index: React.FC<any> = () => {
@@ -47,16 +48,41 @@ const Index: React.FC<any> = () => {
             <MenuItem>生活日常</MenuItem>
           </MenuList>
           <MenuPanels>
-            <MenuPanel><View className='test1'><Text>推荐热门</Text></View></MenuPanel>
-            <MenuPanel><View className='test2'><Text>工具榜单</Text></View></MenuPanel>
-            <MenuPanel><View className='test3'><Text>视频音频</Text></View></MenuPanel>
-            <MenuPanel><View className='test1'><Text>图形图形</Text></View></MenuPanel>
-            <MenuPanel><View className='test2'><Text>日期时间</Text></View></MenuPanel>
-            <MenuPanel><View className='test3'><Text>文字编辑</Text></View></MenuPanel>
-            <MenuPanel><View className='test1'><Text>加密解密</Text></View></MenuPanel>
-            <MenuPanel><View className='test2'><Text>编程开发</Text></View></MenuPanel>
-            <MenuPanel><View className='test3'><Text>计算换算</Text></View></MenuPanel>
-            <MenuPanel><View className='test1'><Text>生活日常</Text></View></MenuPanel>
+            <MenuPanel name='推荐热门'>
+              <ToolsItem
+                name='测试工具'
+                icon={require('../../assets/images/home.png')}
+                path='/pages/tools/test/index'
+              />
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+            </MenuPanel>
+            <MenuPanel name='工具榜单'>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+            </MenuPanel>
+            <MenuPanel name='视频音频'>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+              <ToolsItem/>
+            </MenuPanel>
+            <MenuPanel name='图形图形'><View className='test1'></View></MenuPanel>
+            <MenuPanel name='日期时间'><View className='test2'></View></MenuPanel>
+            <MenuPanel name='文字编辑'><View className='test3'></View></MenuPanel>
+            <MenuPanel name='加密解密'><View className='test1'></View></MenuPanel>
+            <MenuPanel name='编程开发'><View className='test2'></View></MenuPanel>
+            <MenuPanel name='计算换算'><View className='test3'></View></MenuPanel>
+            <MenuPanel name='生活日常'><View className='test1'></View></MenuPanel>
           </MenuPanels>
         </Menu>
       )}
