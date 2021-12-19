@@ -10,6 +10,7 @@ type Props = {
   anchorMap: Map<number, MenuAnchorItem>,  // menuItem的锚点对象映射
   selectedIndex: number,  // 当前选中的menuItem值
   scrollOffSet: number,  // 点击menuItem后, 滚动轴跳转的偏移量
+  scrollWithAnimation: boolean,
   onSetSelectIndex: Function,  // 设置当前选中的menuItem值
 }
 
@@ -20,16 +21,34 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
     anchorMap,
     selectedIndex,
     scrollOffSet = 0,
+    scrollWithAnimation = false,
     onSetSelectIndex
   } = props;
-  const [dataMap] = useState(new Map([['scrollTop', 0], ['selectedIndex', 0]]));
+  const [refresh, setRefresh] = useState(false);
+  const [dataMap] = useState(new Map([
+    ['scrollTop', 0],
+    ['setFinalScrollTop', -1],
+    ['selectedIndex', 0],
+    ['scrollWithAnimation', -1],
+  ]));
 
   // 检测滚动条位置是否需要更新
   let anchor = anchorMap.get(selectedIndex);
   if (selectedIndex != dataMap.get('selectedIndex') && anchor != undefined) {
     dataMap.set('scrollTop', anchor.top - scrollOffSet);
+    dataMap.set('setFinalScrollTop', anchor.top - scrollOffSet);
     dataMap.set('selectedIndex', selectedIndex);
   }
+
+  useEffect(() => {
+    if (dataMap.get('scrollWithAnimation') === -1) {
+      dataMap.set('scrollWithAnimation', 0);
+      return
+    }
+
+    dataMap.set('scrollWithAnimation', 1);
+    doRefresh()
+  }, [scrollWithAnimation]);
 
   useEffect(() => {
     // 获取所有子元素的宽高等信息
@@ -44,6 +63,12 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
     })
   }, []);
 
+  useEffect(() => {
+    refresh && setTimeout(() => setRefresh(false))
+  }, [refresh]);
+
+  const doRefresh = () => setRefresh(true);
+
   return (
     <View
       className='c-menu-panels'
@@ -52,8 +77,20 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
         className='c-menu-panels-scroll-view'
         scrollY
         scrollTop={dataMap.get('scrollTop')}
+        scrollWithAnimation={dataMap.get('scrollWithAnimation') === 1 ? true : false}
         onScroll={debounce((e) => {
           let { detail: { scrollTop: top } } = e;
+
+          if (dataMap.get('setFinalScrollTop') != -1) {
+            let gap = Math.abs(Math.floor(dataMap.get('setFinalScrollTop')! - top));
+            if (gap === 0) {
+              dataMap.set('scrollTop', top);
+              dataMap.set('setFinalScrollTop', -1);
+              dataMap.set('scrollWithAnimation', 0);
+              doRefresh()
+            }
+            return;
+          }
 
           let currentScrollTop = dataMap.get('scrollTop') != undefined
             ? dataMap.get('scrollTop')

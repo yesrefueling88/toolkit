@@ -50,9 +50,9 @@ const Index: React.FC<any> = () => {
           <MenuPanels>
             <MenuPanel name='推荐热门'>
               <ToolsItem
-                name='测试工具'
-                icon={require('../../assets/images/home.png')}
-                path='/pages/tools/test/index'
+                name='生成二维码'
+                icon={require('../../assets/images/qr-code.png')}
+                path='/pages/tools/qr-code/index'
               />
               <ToolsItem/>
               <ToolsItem/>

@@ -21,6 +21,7 @@ const Menu: any = forwardRef((props: Props, ref) => {
   const { children, style = '', scrollOffSet = 0 } = props;
   // 当前选中的menuItem值
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollWithAnimation, setScrollWithAnimation] = useState(false);
   // menuItem的锚点对象映射
   const [anchorMap] = useState(new Map<number, MenuAnchorItem>());
 
@@ -36,8 +37,10 @@ const Menu: any = forwardRef((props: Props, ref) => {
           selectedIndex: selectedIndex,
           onSetSelectIndex: (tabIndex) => {
             if (selectedIndex == tabIndex) return;
-
-            setSelectedIndex(tabIndex);
+            setScrollWithAnimation(!scrollWithAnimation)
+            setTimeout(() => {
+              setSelectedIndex(tabIndex);
+            }, 50)
           }
         });
 
@@ -46,6 +49,7 @@ const Menu: any = forwardRef((props: Props, ref) => {
           selectedIndex: selectedIndex,
           anchorMap: anchorMap,
           scrollOffSet: scrollOffSet,
+          scrollWithAnimation: scrollWithAnimation,
           onSetSelectIndex: (tabIndex) => {
             if (selectedIndex == tabIndex) return;
 

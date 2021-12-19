@@ -1,0 +1,80 @@
+@import '@style/index';
+
+.qr-code {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+
+  &-content {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 0 0;
+    @include box-sizing-border-box();
+
+    &-save {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-btn {
+        font-size: 32px;
+        color: #1E90FF;
+      }
+    }
+  }
+
+  &-edit-box {
+    padding: 20px 20px;
+    /* #ifdef rn */
+    padding-right: 40px;
+    /* #endif */
+    @include box-sizing-border-box();
+
+    &-textarea {
+      width: 100%;
+      height: 300px;
+      padding: 20px 20px;
+      @include box-sizing-border-box();
+      background-color: #ffffff;
+      font-size: 30px;
+    }
+
+    .taro-textarea {
+      font-size: 30px;
+    }
+  }
+
+  &-generate {
+    width: 100%;
+    height: 90px;
+    padding: 0px 20px;
+    /* #ifdef rn */
+    padding-right: 40px;
+    /* #endif */
+    @include box-sizing-border-box();
+
+    &-btn {
+      width: 100%;
+      height: 100%;
+      background-color: #1E90FF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+
+      &-text {
+        font-size: 36px;
+        color: #ffffff;
+      }
+    }
+
+    &-hover {
+      background-color: #4097E6;
+    }
+  }
+}

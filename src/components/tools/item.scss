@@ -1,7 +1,7 @@
 @import '@style/index';
 
 .c-tool-item {
-  width: calc(100% / 3);
+  width: 33.33333333%;
   height: 255px;
   padding: 56px 0;
   @include box-sizing-border-box();
