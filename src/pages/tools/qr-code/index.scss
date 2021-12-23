@@ -51,8 +51,8 @@
 
   &-generate {
     width: 100%;
-    height: 90px;
-    padding: 0px 20px;
+    height: 110px;
+    padding: 10px 20px;
     /* #ifdef rn */
     padding-right: 40px;
     /* #endif */
@@ -74,7 +74,7 @@
     }
 
     &-hover {
-      background-color: #4097E6;
+      background-color: #87CEFA;
     }
   }
 }

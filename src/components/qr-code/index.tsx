@@ -1,7 +1,13 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { Image } from '@tarojs/components'
 import { createQrCodeImg } from './lib/qrcode'
 import './index.scss'
+
+let RnQRCode: any;
+
+if (IS_RN) {
+  RnQRCode = require("react-native-qrcode-svg").default;
+}
 
 type Props = {
   text: string,
@@ -18,12 +24,23 @@ const QRCode: React.FC<Props> = ({
   errorCorrectLevel = 'M',
   typeNumber = 2,
 }) => {
-  const image = useMemo(() => {
-    const options = { errorCorrectLevel, typeNumber, size: size * scale }
-    return createQrCodeImg(text, options)
-  }, [text, scale, size, errorCorrectLevel, typeNumber])
-  const style = { width: size + 'px', height: size + 'px' }
-  return <Image style={style} src={image} />
+  const style = { width: size + 'px', height: size + 'px' };
+  return (
+    IS_RN ? (
+      <RnQRCode
+        value={text}
+      />
+    ) : (
+      <Image
+        style={style}
+        src={createQrCodeImg(text, {
+          errorCorrectLevel,
+          typeNumber,
+          size: size * scale
+        })}
+      />
+    )
+  )
 };
 
 export default QRCode
