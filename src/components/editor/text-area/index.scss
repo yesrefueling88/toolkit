@@ -1,0 +1,48 @@
+@import '@style/index';
+
+.c-text-area {
+  padding: 20px 20px;
+  @include box-sizing-border-box();
+  position: relative;
+
+  &-content {
+    width: 100%;
+    height: 300px;
+    /* #ifndef h5 */
+    padding: 20px 20px 50px 20px;
+    @include box-sizing-border-box();
+    background-color: #ffffff;
+    font-size: 30px;
+    /* #endif */
+  }
+
+  .taro-textarea {
+    width: 100%;
+    height: 250px;
+    padding: 20px 20px 0 20px;
+    @include box-sizing-border-box();
+    background-color: #ffffff;
+    font-size: 30px;
+  }
+
+  &-clear {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .taro-img__mode-scaletofill {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

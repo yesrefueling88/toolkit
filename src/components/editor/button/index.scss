@@ -1,0 +1,22 @@
+@import '@style/index';
+
+.c-button {
+  width: 100%;
+  height: 110px;
+  padding: 10px 20px;
+  @include box-sizing-border-box();
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    &-text {
+      font-size: 36px;
+      color: #ffffff;
+    }
+  }
+}

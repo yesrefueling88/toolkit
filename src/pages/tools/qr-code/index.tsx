@@ -1,15 +1,20 @@
+import Taro from "@tarojs/taro";
 import React, { useMemo, useState } from 'react'
-import { View, Text, Textarea } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import QRCode from "@components/qr-code";
+import TextArea from "@components/editor/text-area";
+import Button from "@components/editor/button";
 import './index.scss'
 
 const Index: React.FC<any> = () => {
+  const [canShowToast, setCanShowToast] = useState(false);
   const [text, setText] = useState('https://github.com/yesrefueling88/toolkit');
   const [temp, setTemp] = useState('https://github.com/yesrefueling88/toolkit');
 
   const handerClick = () => {
     setText(temp);
+    setCanShowToast(true);
   };
 
   return (
@@ -19,6 +24,16 @@ const Index: React.FC<any> = () => {
       />
       <View className='qr-code-content'>
         {useMemo(() => {
+          if (canShowToast) {
+            Taro.showToast({
+              title: '生成二维码成功!',
+              icon: 'none',
+              duration: 2000
+            });
+
+            setCanShowToast(false);
+          }
+
           return (
             <QRCode
               text={text}
@@ -35,38 +50,22 @@ const Index: React.FC<any> = () => {
           </View>
         )}
       </View>
-      <View className='qr-code-edit-box'>
-        <Textarea
-          // @ts-ignore
-          style={{ textAlignVertical: 'top' }}
-          className='qr-code-edit-box-textarea'
-          placeholder='请输入内容'
-          maxlength={-1}
-          onInput={(event) => {
-            let { detail: { value } } = event;
+      <TextArea
+        onInput={(event) => {
+          const { content } = event;
 
-            if (!!value) {
-              setTemp(value);
-            } else {
-              setTemp('https://github.com/yesrefueling88/toolkit');
-            }
-          }}
-        />
-      </View>
-      <View className='qr-code-generate'>
-        <View
-          className='qr-code-generate-btn'
-          hoverStartTime={50}
-          hoverStayTime={50}
-          hoverClass='qr-code-generate-hover'
-          hoverStyle={{
-            backgroundColor: '#87CEFA'
-          }}
-          onClick={handerClick}
-        >
-          <Text className='qr-code-generate-btn-text'>生成二维码</Text>
-        </View>
-      </View>
+          if (!!content) {
+            setTemp(content);
+          } else {
+            setTemp('https://github.com/yesrefueling88/toolkit');
+          }
+        }}
+      />
+      <Button
+        name='生成二维码'
+        backgroundColor='#1E90FF'
+        onClick={handerClick}
+      />
     </View>
   )
 };

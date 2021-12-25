@@ -40,6 +40,17 @@ const NavBar: React.FC<Props> = ({
     if (onBack) {
       onBack()
     } else {
+      if (IS_H5) {
+        const pages = Taro.getCurrentPages();
+        if (pages.length === 1) {
+          Taro.navigateTo({
+            url: '/pages/index/index'
+          });
+
+          return;
+        }
+      }
+
       Taro.navigateBack()
     }
   };
