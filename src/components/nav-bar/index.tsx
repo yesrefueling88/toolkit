@@ -4,7 +4,7 @@ import { Block, View, Image, Text } from '@tarojs/components'
 import { useSelector, useDispatch } from 'react-redux'
 import { getNavBarInfo } from "@actions/global";
 import { NavBarInfo } from "@reducers/global";
-
+import config from "../../config";
 import './index.scss'
 
 type Props = {
@@ -43,11 +43,16 @@ const NavBar: React.FC<Props> = ({
       if (IS_H5) {
         const pages = Taro.getCurrentPages();
         if (pages.length === 1) {
-          Taro.navigateTo({
-            url: '/pages/index/index'
-          });
+          const { path = '' } = pages[0];
 
-          return;
+          if (path !== config.page.index) {
+            Taro.navigateTo({
+              url: '/pages/index/index'
+            });
+
+            return;
+          }
+
         }
       }
 

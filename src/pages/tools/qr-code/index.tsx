@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { View, Text } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import QRCode from "@components/qr-code";
@@ -12,9 +12,12 @@ const Index: React.FC<any> = () => {
   const [text, setText] = useState('https://github.com/yesrefueling88/toolkit');
   const [temp, setTemp] = useState('https://github.com/yesrefueling88/toolkit');
 
+  useEffect(() => {
+    setCanShowToast(true);
+  }, []);
+
   const handerClick = () => {
     setText(temp);
-    setCanShowToast(true);
   };
 
   return (
@@ -25,13 +28,13 @@ const Index: React.FC<any> = () => {
       <View className='qr-code-content'>
         {useMemo(() => {
           if (canShowToast) {
-            Taro.showToast({
-              title: '生成二维码成功!',
-              icon: 'none',
-              duration: 2000
-            });
-
-            setCanShowToast(false);
+            setTimeout(() => {
+              Taro.showToast({
+                title: '生成二维码成功!',
+                icon: 'none',
+                duration: 2000
+              });
+            }, 0)
           }
 
           return (

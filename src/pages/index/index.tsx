@@ -8,6 +8,7 @@ import MenuItem from "@components/menu/menu-item";
 import MenuPanel from "@components/menu/menu-panel";
 import { createSelectorQuery } from "@utils/taro";
 import ToolsItem from "@components/tools/item";
+import config from "../../config";
 import './index.scss'
 
 const Index: React.FC<any> = () => {
@@ -52,9 +53,13 @@ const Index: React.FC<any> = () => {
               <ToolsItem
                 name='生成二维码'
                 icon={require('../../assets/images/qr-code.png')}
-                path='/pages/tools/qr-code/index'
+                path={config.page.qrCode}
               />
-              <ToolsItem/>
+              <ToolsItem
+                name='体积计算器'
+                icon={require('../../assets/images/volume.png')}
+                path={config.page.volumeCalculator}
+              />
               <ToolsItem/>
               <ToolsItem/>
               <ToolsItem/>
