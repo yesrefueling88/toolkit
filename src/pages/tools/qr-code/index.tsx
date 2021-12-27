@@ -1,10 +1,10 @@
-import Taro from "@tarojs/taro";
 import React, { useEffect, useMemo, useState } from 'react'
 import { View, Text } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import QRCode from "@components/qr-code";
 import TextArea from "@components/editor/text-area";
 import Button from "@components/editor/button";
+import { toast } from "@utils/index";
 import './index.scss'
 
 const Index: React.FC<any> = () => {
@@ -29,11 +29,7 @@ const Index: React.FC<any> = () => {
         {useMemo(() => {
           if (canShowToast) {
             setTimeout(() => {
-              Taro.showToast({
-                title: '生成二维码成功!',
-                icon: 'none',
-                duration: 2000
-              });
+              toast('生成二维码成功!');
             }, 0)
           }
 

@@ -3,11 +3,11 @@ import { View, Text } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import Button from "@components/editor/button";
 import Picker from "@components/editor/picker";
-import Cylinder from "@pages/tools/calculator/volume/components/cylinder";
-import Cone from "@pages/tools/calculator/volume/components/cone";
-import Sphere from "@pages/tools/calculator/volume/components/sphere";
-import Cuboid from "@pages/tools/calculator/volume/components/cuboid";
-import Cube from "@pages/tools/calculator/volume/components/cube";
+import Cylinder from "@pages/tools/calculator/surface-area/components/cylinder";
+import Cone from "@pages/tools/calculator/surface-area/components/cone";
+import Sphere from "@pages/tools/calculator/surface-area/components/sphere";
+import Cuboid from "@pages/tools/calculator/surface-area/components/cuboid";
+import Cube from "@pages/tools/calculator/surface-area/components/cube";
 import './index.scss'
 
 const shapeRange = [
@@ -37,9 +37,9 @@ const Index: React.FC<any> = () => {
   };
 
   return (
-    <View className='volume'>
+    <View className='surface-area'>
       <NavBar
-        title='体积计算器'
+        title='表面积计算器'
       />
       <Picker
         range={shapeRange}
@@ -50,7 +50,7 @@ const Index: React.FC<any> = () => {
           setSelectorChecked(parseInt(index))
         }}
       />
-      <View className='volume-input-groups'>
+      <View className='surface-area-input-groups'>
         {selectorChecked === shapeType.Cylinder && (
           <Cylinder
             ref={componentRef}
@@ -111,17 +111,17 @@ const Index: React.FC<any> = () => {
         onClick={handerClick}
       />
       {!!result && (
-        <View className='volume-result'>
+        <View className='surface-area-result'>
           <View
-            className='volume-result-label'
+            className='surface-area-result-label'
           >
-            <Text className='volume-result-label-text'>
-              体积（V） =
+            <Text className='surface-area-result-label-text'>
+              表面积（S） =
             </Text>
           </View>
-          <View className='volume-result-content'>
-            <View className='volume-result-content-num'>
-              <Text className='volume-result-content-num-text'>
+          <View className='surface-area-result-content'>
+            <View className='surface-area-result-content-num'>
+              <Text className='surface-area-result-content-num-text'>
                 {result}
               </Text>
             </View>

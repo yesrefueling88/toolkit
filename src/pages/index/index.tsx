@@ -60,8 +60,16 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/volume.png')}
                 path={config.page.volumeCalculator}
               />
-              <ToolsItem/>
-              <ToolsItem/>
+              <ToolsItem
+                name='表面积计算器'
+                icon={require('../../assets/images/surface-area.png')}
+                path={config.page.surfaceAreaCalculator}
+              />
+              <ToolsItem
+                name='面积计算器'
+                icon={require('../../assets/images/square.png')}
+                path={config.page.areaCalculator}
+              />
               <ToolsItem/>
               <ToolsItem/>
             </MenuPanel>

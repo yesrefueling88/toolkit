@@ -3,27 +3,27 @@ import { View, Text } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import Button from "@components/editor/button";
 import Picker from "@components/editor/picker";
-import Cylinder from "@pages/tools/calculator/volume/components/cylinder";
-import Cone from "@pages/tools/calculator/volume/components/cone";
-import Sphere from "@pages/tools/calculator/volume/components/sphere";
-import Cuboid from "@pages/tools/calculator/volume/components/cuboid";
-import Cube from "@pages/tools/calculator/volume/components/cube";
+import Square from "@pages/tools/calculator/area/components/square";
+import Rectangle from "@pages/tools/calculator/area/components/rectangle";
+import Circular from "@pages/tools/calculator/area/components/circular";
+import Triangle from "@pages/tools/calculator/area/components/triangle";
+import Trapezoid from "@pages/tools/calculator/area/components/trapezoid";
 import './index.scss'
 
 const shapeRange = [
-  '圆柱', // 0 => Cylinder
-  '圆锥', // 1 => Cone
-  '球体', // 2 => Sphere
-  '长方体', // 3 => Cuboid
-  '立方体', // 4 => Cube
+  '正方形', // 0 => square
+  '长方形', // 1 => reacangle
+  '圆形', // 2 => circular
+  '三角形', // 3 => triangle
+  '梯形', // 4 => trapezoid
 ];
 
 const shapeType = {
-  Cylinder: 0,
-  Cone: 1,
-  Sphere: 2,
-  Cuboid: 3,
-  Cube: 4,
+  Square: 0,
+  Reacangle: 1,
+  Circular: 2,
+  Triangle: 3,
+  Trapezoid: 4,
 };
 
 const Index: React.FC<any> = () => {
@@ -37,9 +37,9 @@ const Index: React.FC<any> = () => {
   };
 
   return (
-    <View className='volume'>
+    <View className='area'>
       <NavBar
-        title='体积计算器'
+        title='面积计算器'
       />
       <Picker
         range={shapeRange}
@@ -50,9 +50,9 @@ const Index: React.FC<any> = () => {
           setSelectorChecked(parseInt(index))
         }}
       />
-      <View className='volume-input-groups'>
-        {selectorChecked === shapeType.Cylinder && (
-          <Cylinder
+      <View className='area-input-groups'>
+        {selectorChecked === shapeType.Square && (
+          <Square
             ref={componentRef}
             onResult={({ result: newResult }) => {
               setResult(newResult)
@@ -60,8 +60,8 @@ const Index: React.FC<any> = () => {
           />
         )}
 
-        {selectorChecked === shapeType.Cone && (
-          <Cone
+        {selectorChecked === shapeType.Reacangle && (
+          <Rectangle
             ref={componentRef}
             onResult={({ result: newResult }) => {
               setResult(newResult)
@@ -69,8 +69,8 @@ const Index: React.FC<any> = () => {
           />
         )}
 
-        {selectorChecked === shapeType.Sphere && (
-          <Sphere
+        {selectorChecked === shapeType.Circular && (
+          <Circular
             ref={componentRef}
             onResult={({ result: newResult }) => {
               setResult(newResult)
@@ -78,8 +78,8 @@ const Index: React.FC<any> = () => {
           />
         )}
 
-        {selectorChecked === shapeType.Cuboid && (
-          <Cuboid
+        {selectorChecked === shapeType.Triangle && (
+          <Triangle
             ref={componentRef}
             onResult={({ result: newResult }) => {
               setResult(newResult)
@@ -87,8 +87,8 @@ const Index: React.FC<any> = () => {
           />
         )}
 
-        {selectorChecked === shapeType.Cube && (
-          <Cube
+        {selectorChecked === shapeType.Trapezoid && (
+          <Trapezoid
             ref={componentRef}
             onResult={({ result: newResult }) => {
               setResult(newResult)
@@ -111,17 +111,17 @@ const Index: React.FC<any> = () => {
         onClick={handerClick}
       />
       {!!result && (
-        <View className='volume-result'>
+        <View className='area-result'>
           <View
-            className='volume-result-label'
+            className='area-result-label'
           >
-            <Text className='volume-result-label-text'>
-              体积（V） =
+            <Text className='area-result-label-text'>
+              表面积（S） =
             </Text>
           </View>
-          <View className='volume-result-content'>
-            <View className='volume-result-content-num'>
-              <Text className='volume-result-content-num-text'>
+          <View className='area-result-content'>
+            <View className='area-result-content-num'>
+              <Text className='area-result-content-num-text'>
                 {result}
               </Text>
             </View>
