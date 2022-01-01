@@ -1,10 +1,9 @@
 @import '@style/index';
 
-Page {
-  background-color: whitesmoke;
-}
-
 .color-conver {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
 
   &-input-groups {
     margin-bottom: 20px;

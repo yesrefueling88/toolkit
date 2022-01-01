@@ -103,7 +103,7 @@ export function RGB2Hex (r: number, g: number, b: number):string {
 }
 
 /**
- * 6进制转RGB
+ * 16进制转RGB
  * @param hex
  */
 export function Hex2RGB (hex: string) {

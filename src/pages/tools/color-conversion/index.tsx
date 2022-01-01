@@ -131,6 +131,7 @@ const Index: React.FC<any> = () => {
         {selectorChecked === 1 && (
           <Block>
             <Input
+              type='text'
               label='（hex）'
               labelStyle={IS_RN ? { width: 75 } : 'width:85px;'}
               placeholder='请输入16进制的颜色值'
