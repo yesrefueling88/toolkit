@@ -6,6 +6,7 @@ export default {
     'pages/tools/calculator/volume/index',
     'pages/tools/calculator/surface-area/index',
     'pages/tools/calculator/area/index',
+    'pages/tools/color-conversion/index',
   ],
   window: {
     backgroundTextStyle: 'light',

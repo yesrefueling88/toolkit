@@ -5,6 +5,7 @@ const config = {
     volumeCalculator: '/pages/tools/calculator/volume/index',
     surfaceAreaCalculator: '/pages/tools/calculator/surface-area/index',
     areaCalculator: '/pages/tools/calculator/area/index',
+    colorConversion: '/pages/tools/color-conversion/index',
   },
 
   services: {},

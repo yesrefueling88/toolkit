@@ -70,8 +70,11 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/square.png')}
                 path={config.page.areaCalculator}
               />
-              <ToolsItem/>
-              <ToolsItem/>
+              <ToolsItem
+                name='颜色转换'
+                icon={require('../../assets/images/RGB.png')}
+                path={config.page.colorConversion}
+              />
             </MenuPanel>
             <MenuPanel name='工具榜单'>
               <ToolsItem/>

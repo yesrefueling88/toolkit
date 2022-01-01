@@ -6,7 +6,7 @@ type Props = {
   style?: string | undefined,
   placeholder?: string | undefined,
   label?: string | undefined,
-  labelStyle?: string | undefined,
+  labelStyle?: string | any,
   type?: "number" | "text" | "idcard" | "digit" | undefined,
   content?: string | undefined,
   onInput?: Function | undefined,

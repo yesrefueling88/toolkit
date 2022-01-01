@@ -88,3 +88,38 @@ export function toast (title: string, duration: number = 2000) {
     duration: duration
   });
 }
+
+/**
+ * RGB转16进制
+ * @param color
+ */
+export function RGB2Hex (r: number, g: number, b: number):string {
+  if (typeof r !== "number" || typeof g !== "number" || typeof b !== "number") {
+    return ''
+  }
+
+  let hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  return hex;
+}
+
+/**
+ * 6进制转RGB
+ * @param hex
+ */
+export function Hex2RGB (hex: string) {
+  if (hex == "") {
+    return ""
+  }
+  hex = hex.substring(1);
+  hex = hex.toLowerCase();
+  let b = new Array();
+  for (let x = 0; x < 3; x++) {
+    b[0] = hex.substr(x * 2, 2);
+    b[3] = "0123456789abcdef";
+    b[1] = b[0].substr(0, 1);
+    b[2] = b[0].substr(1, 1);
+    b[20 + x] = b[3].indexOf(b[1]) * 16 + b[3].indexOf(b[2]);
+  }
+  return "rgb(" + b[20] + "," + b[21] + "," + b[22] + ")";
+}
+
