@@ -6,6 +6,7 @@ const config = {
     surfaceAreaCalculator: '/pages/tools/calculator/surface-area/index',
     areaCalculator: '/pages/tools/calculator/area/index',
     colorConversion: '/pages/tools/color-conversion/index',
+    base64Conversion: '/pages/tools/base64/index',
   },
 
   services: {},

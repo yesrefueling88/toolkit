@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import { Block, Text, View } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
-import Picker from "@components/editor/picker";
 import Button from "@components/editor/button";
+import Picker from "@components/editor/picker";
 import Input from "@components/editor/input";
 import { checkNumber, RGB2Hex, isValid, toast, Hex2RGB } from "@utils/index";
 import './index.scss'

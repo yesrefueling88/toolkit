@@ -7,6 +7,7 @@ export default {
     'pages/tools/calculator/surface-area/index',
     'pages/tools/calculator/area/index',
     'pages/tools/color-conversion/index',
+    'pages/tools/base64/index',
   ],
   window: {
     backgroundTextStyle: 'light',

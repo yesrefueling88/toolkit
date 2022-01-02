@@ -38,15 +38,15 @@ const Index: React.FC<any> = () => {
         >
           <MenuList>
             <MenuItem>推荐热门</MenuItem>
-            <MenuItem>工具榜单</MenuItem>
-            <MenuItem>视频音频</MenuItem>
-            <MenuItem>图形图形</MenuItem>
+            <MenuItem>生活日常</MenuItem>
+            <MenuItem>编程开发</MenuItem>
+            <MenuItem>计算换算</MenuItem>
             <MenuItem>日期时间</MenuItem>
             <MenuItem>文字编辑</MenuItem>
             <MenuItem>加密解密</MenuItem>
             <MenuItem>编程开发</MenuItem>
-            <MenuItem>计算换算</MenuItem>
-            <MenuItem>生活日常</MenuItem>
+            <MenuItem>视频音频</MenuItem>
+            <MenuItem>工具榜单</MenuItem>
           </MenuList>
           <MenuPanels>
             <MenuPanel name='推荐热门'>
@@ -75,28 +75,52 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/RGB.png')}
                 path={config.page.colorConversion}
               />
+              <ToolsItem
+                name='base64图片'
+                icon={require('../../assets/images/pic.png')}
+                path={config.page.base64Conversion}
+              />
             </MenuPanel>
-            <MenuPanel name='工具榜单'>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
+            <MenuPanel name='生活日常'>
+              <ToolsItem
+                name='生成二维码'
+                icon={require('../../assets/images/qr-code.png')}
+                path={config.page.qrCode}
+              />
             </MenuPanel>
-            <MenuPanel name='视频音频'>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
-              <ToolsItem/>
+            <MenuPanel name='编程开发'>
+              <ToolsItem
+                name='颜色转换'
+                icon={require('../../assets/images/RGB.png')}
+                path={config.page.colorConversion}
+              />
+              <ToolsItem
+                name='base64图片'
+                icon={require('../../assets/images/pic.png')}
+                path={config.page.base64Conversion}
+              />
             </MenuPanel>
-            <MenuPanel name='图形图形'><View className='test1'></View></MenuPanel>
+            <MenuPanel name='计算换算'>
+              <ToolsItem
+                name='体积计算器'
+                icon={require('../../assets/images/volume.png')}
+                path={config.page.volumeCalculator}
+              />
+              <ToolsItem
+                name='表面积计算器'
+                icon={require('../../assets/images/surface-area.png')}
+                path={config.page.surfaceAreaCalculator}
+              />
+              <ToolsItem
+                name='面积计算器'
+                icon={require('../../assets/images/square.png')}
+                path={config.page.areaCalculator}
+              />
+            </MenuPanel>
             <MenuPanel name='日期时间'><View className='test2'></View></MenuPanel>
             <MenuPanel name='文字编辑'><View className='test3'></View></MenuPanel>
             <MenuPanel name='加密解密'><View className='test1'></View></MenuPanel>
-            <MenuPanel name='编程开发'><View className='test2'></View></MenuPanel>
+            <MenuPanel name='图形图形'><View className='test2'></View></MenuPanel>
             <MenuPanel name='计算换算'><View className='test3'></View></MenuPanel>
             <MenuPanel name='生活日常'><View className='test1'></View></MenuPanel>
           </MenuPanels>

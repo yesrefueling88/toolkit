@@ -37,3 +37,8 @@ export const createSelectorQuery = (key: string) => {
     }, 500)
   })
 };
+
+export const readFileSync = (path: string, encoding: string) => {
+  // @ts-ignore
+  return Taro.getFileSystemManager().readFileSync(path, encoding)
+};

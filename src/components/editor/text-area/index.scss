@@ -25,6 +25,40 @@
     font-size: 30px;
   }
 
+  &-copy {
+    position: absolute;
+    left: 35px;
+    bottom: 20px;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &-text {
+      color: #1E90FF;
+      font-size: 26px;
+    }
+  }
+
+  &-paste {
+    position: absolute;
+    left: 105px;
+    bottom: 20px;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &-text {
+      color: #1E90FF;
+      font-size: 26px;
+    }
+  }
+
   &-clear {
     position: absolute;
     right: 20px;

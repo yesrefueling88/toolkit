@@ -17,4 +17,13 @@ export const createSelectorQuery = (key: string) => {
       msg: 'RN不支持此API'
     })
   })
-}
+};
+
+// @ts-ignore
+export const readFileSync = (path: string, encoding: string) => {
+  return {
+    success: false,
+    data: null,
+    msg: 'RN不支持此API'
+  }
+};
