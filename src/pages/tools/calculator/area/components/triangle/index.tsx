@@ -41,7 +41,7 @@ const Triangle = forwardRef((props: Props, ref) => {
           break;
       }
 
-      let result = (parseInt(lengthA) * parseInt(height)) / 2;
+      let result = (parseFloat(lengthA) * parseFloat(height)) / 2;
 
       onResult({ result })
     },

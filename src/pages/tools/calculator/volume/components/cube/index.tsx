@@ -28,7 +28,7 @@ const Cube = forwardRef((props: Props, ref) => {
         return;
       }
 
-      let result = Math.pow(parseInt(length), 3);
+      let result = Math.pow(parseFloat(length), 3);
 
       onResult({ result })
     },

@@ -80,6 +80,11 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/pic.png')}
                 path={config.page.base64Conversion}
               />
+              <ToolsItem
+                name='正则表达式'
+                icon={require('../../assets/images/regular.png')}
+                path={config.page.regular}
+              />
             </MenuPanel>
             <MenuPanel name='生活日常'>
               <ToolsItem
@@ -98,6 +103,11 @@ const Index: React.FC<any> = () => {
                 name='base64图片'
                 icon={require('../../assets/images/pic.png')}
                 path={config.page.base64Conversion}
+              />
+              <ToolsItem
+                name='正则表达式'
+                icon={require('../../assets/images/regular.png')}
+                path={config.page.regular}
               />
             </MenuPanel>
             <MenuPanel name='计算换算'>

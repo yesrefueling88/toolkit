@@ -48,7 +48,7 @@ const Cuboid = forwardRef((props: Props, ref) => {
           break;
       }
 
-      let result = parseInt(length) * parseInt(width) * parseInt(height);
+      let result = parseFloat(length) * parseFloat(width) * parseFloat(height);
 
       onResult({ result })
     },

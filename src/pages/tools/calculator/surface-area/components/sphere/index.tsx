@@ -28,7 +28,7 @@ const Sphere = forwardRef((props: Props, ref) => {
         return;
       }
 
-      let result = 4 * (Math.PI * Math.pow(parseInt(r), 2));
+      let result = 4 * (Math.PI * Math.pow(parseFloat(r), 2));
 
       onResult({ result })
     },

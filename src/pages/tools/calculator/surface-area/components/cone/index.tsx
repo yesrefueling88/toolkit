@@ -41,7 +41,7 @@ const Cone = forwardRef((props: Props, ref) => {
           break;
       }
 
-      let result = Math.PI * parseInt(r) * (parseInt(r) + Math.sqrt((Math.pow(parseInt(r), 2) + Math.pow(parseInt(h), 2))));
+      let result = Math.PI * parseFloat(r) * (parseFloat(r) + Math.sqrt((Math.pow(parseFloat(r), 2) + Math.pow(parseFloat(h), 2))));
 
       onResult({ result })
     },

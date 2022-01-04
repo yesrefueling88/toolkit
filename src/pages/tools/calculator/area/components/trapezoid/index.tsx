@@ -48,7 +48,7 @@ const Trapezoid = forwardRef((props: Props, ref) => {
           break;
       }
 
-      let result = (parseInt(lengthA) + parseInt(lengthB)) * parseInt(height) / 2;
+      let result = (parseFloat(lengthA) + parseFloat(lengthB)) * parseFloat(height) / 2;
 
       onResult({ result })
     },

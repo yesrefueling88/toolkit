@@ -28,7 +28,7 @@ const Square = forwardRef((props: Props, ref) => {
         return;
       }
 
-      let result = Math.pow(parseInt(length), 2);
+      let result = Math.pow(parseFloat(length), 2);
 
       onResult({ result })
     },

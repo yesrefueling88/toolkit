@@ -41,7 +41,7 @@ const Cylinder = forwardRef((props: Props, ref) => {
           break;
       }
 
-      let result = Math.PI * Math.pow(parseInt(r), 2) * parseInt(h);
+      let result = Math.PI * Math.pow(parseFloat(r), 2) * parseFloat(h);
 
       onResult({ result })
     },

@@ -42,7 +42,7 @@ const Cylinder = forwardRef((props: Props, ref) => {
       }
 
       // S表=2πr²+2πrh
-      let result = 2 * Math.PI * Math.pow(parseInt(r), 2) + 2 * Math.PI * parseInt(r) * parseInt(h);
+      let result = 2 * Math.PI * Math.pow(parseFloat(r), 2) + 2 * Math.PI * parseFloat(r) * parseFloat(h);
 
       onResult({ result })
     },

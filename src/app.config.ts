@@ -8,6 +8,7 @@ export default {
     'pages/tools/calculator/area/index',
     'pages/tools/color-conversion/index',
     'pages/tools/base64/index',
+    'pages/tools/regular/index',
   ],
   window: {
     backgroundTextStyle: 'light',

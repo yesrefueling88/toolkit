@@ -41,7 +41,7 @@ const Rectangle = forwardRef((props: Props, ref) => {
           break;
       }
 
-      let result = parseInt(length) * parseInt(width);
+      let result = parseFloat(length) * parseFloat(width);
 
       onResult({ result })
     },

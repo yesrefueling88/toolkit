@@ -28,7 +28,7 @@ const Circular = forwardRef((props: Props, ref) => {
         return;
       }
 
-      let result = Math.PI * Math.pow(parseInt(r), 2);
+      let result = Math.PI * Math.pow(parseFloat(r), 2);
 
       onResult({ result })
     },

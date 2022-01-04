@@ -10,6 +10,7 @@ type Props = {
   placeholder?: string,
   maxlength?: number,
   isHidePasteBtn?: boolean,
+  isHideClearBtn?: boolean,
   onInput?: Function,
   onClickCopy?: Function | null,
   onClickPaste?: Function | null,
@@ -23,6 +24,7 @@ const TextArea: React.FC<Props> = ({
   placeholder = '请输入内容',
   maxlength = -1,
   isHidePasteBtn = false,
+  isHideClearBtn = false,
   onInput = () => {},
   onClickCopy = null,
   onClickPaste = null,
@@ -98,15 +100,18 @@ const TextArea: React.FC<Props> = ({
           <Text className='c-text-area-paste-text'>粘贴</Text>
         </View>
       )}
-      <View
-        className='c-text-area-clear'
-        onClick={onClear}
-      >
-        <Image
-          className='c-text-area-clear-img'
-          src={require('../../../assets/images/clear.png')}
-        />
-      </View>
+
+      {!isHideClearBtn && (
+        <View
+          className='c-text-area-clear'
+          onClick={onClear}
+        >
+          <Image
+            className='c-text-area-clear-img'
+            src={require('../../../assets/images/clear.png')}
+          />
+        </View>
+      )}
     </View>
   )
 };

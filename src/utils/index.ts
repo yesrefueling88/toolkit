@@ -52,7 +52,7 @@ export function throttle (fn, delay = 1000) {
  */
 export function checkNumber (...args) {
   let currentItemIndex = -1;
-  let reg = /^[0-9]*$/;
+  let reg = /^(([0-9])|([1-9]([0-9]+)))(\.[0-9]+)?$/;
   args.some((item, index) => {
     if (reg.test(item)) {
       return false;

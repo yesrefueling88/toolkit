@@ -17,7 +17,7 @@ const Input: React.FC<Props> = ({
   placeholder = '请输入',
   label = '体积（V）',
   labelStyle = '',
-  type = 'number',
+  type = 'digit',
   content = '',
   onInput = () => {},
 }) => {
