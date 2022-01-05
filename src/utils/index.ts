@@ -180,13 +180,11 @@ export function chooseImage ({
  */
 export function readFileOnBase64 (path = '') {
   return new Promise((resolve, reject) => {
-    Taro.showLoading({ title: '加载中...' });
     if (IS_WEAPP) {
       resolve({
         success: true,
         data: 'data:image/png;base64,' + readFileSync(path, 'base64')
       });
-      Taro.hideLoading()
     }
 
     if (IS_RN) {
@@ -196,11 +194,9 @@ export function readFileOnBase64 (path = '') {
             success: true,
             data: 'data:image/png;base64,' + content
           });
-          Taro.hideLoading()
         })
         .catch(() => {
           reject("图片读取失败")
-          Taro.hideLoading()
         });
     }
 
@@ -224,7 +220,6 @@ export function readFileOnBase64 (path = '') {
           success: true,
           data: getBase64Image(image)
         });
-        Taro.hideLoading()
       }
     }
   })
@@ -278,5 +273,25 @@ export function setClipboardData (data: string) {
       },
     })
   })
+}
+
+export function getHtml (body: string) {
+  return `
+        <html>
+        <head>
+          <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+          <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="apple-touch-fullscreen" content="yes">
+          <meta name="format-detection" content="telephone=no,address=no">
+          <meta name="apple-mobile-web-app-status-bar-style" content="white">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+          <title></title>
+        </head>
+        <body>
+            ${body}
+        </body>
+        </html>
+        `
 }
 

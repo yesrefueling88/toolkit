@@ -85,12 +85,27 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/regular.png')}
                 path={config.page.regular}
               />
+              <ToolsItem
+                name='Json格式化'
+                icon={require('../../assets/images/json.png')}
+                path={config.page.jsonFormat}
+              />
+              <ToolsItem
+                name='条形码生成'
+                icon={require('../../assets/images/bar-code.png')}
+                path={config.page.barCode}
+              />
             </MenuPanel>
             <MenuPanel name='生活日常'>
               <ToolsItem
                 name='生成二维码'
                 icon={require('../../assets/images/qr-code.png')}
                 path={config.page.qrCode}
+              />
+              <ToolsItem
+                name='生成条形码'
+                icon={require('../../assets/images/bar-code.png')}
+                path={config.page.barCode}
               />
             </MenuPanel>
             <MenuPanel name='编程开发'>
@@ -108,6 +123,11 @@ const Index: React.FC<any> = () => {
                 name='正则表达式'
                 icon={require('../../assets/images/regular.png')}
                 path={config.page.regular}
+              />
+              <ToolsItem
+                name='Json格式化'
+                icon={require('../../assets/images/json.png')}
+                path={config.page.jsonFormat}
               />
             </MenuPanel>
             <MenuPanel name='计算换算'>

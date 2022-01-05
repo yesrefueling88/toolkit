@@ -1,3 +1,4 @@
+import Taro from "@tarojs/taro";
 import React, { useMemo, useState } from 'react'
 import { Block, Image, View } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
@@ -72,6 +73,7 @@ const Index: React.FC<any> = () => {
                 paths: string,
                 error: string
               }) => {
+                Taro.showLoading({ title: '加载中' });
                 let { success = false, path = '' } = res;
                 if (!success) {
                   return
@@ -82,6 +84,8 @@ const Index: React.FC<any> = () => {
                   if (suc) {
                     setText(data)
                   }
+                }).catch(() => {
+                  Taro.hideLoading();
                 })
               })
             }}
@@ -123,6 +127,8 @@ const Index: React.FC<any> = () => {
                 mode='heightFix'
                 style={IS_RN && { width: imgSize.width, height: imgSize.height }}
                 onLoad={event => {
+                  Taro.hideLoading();
+
                   let { detail: { width = 0, height = 0 } } = event;
                   if (!IS_RN) {
                     return

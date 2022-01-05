@@ -48,7 +48,7 @@
 
   &-status-bar {
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
   &-container {
@@ -64,11 +64,14 @@
 
       &-back {
         position: absolute;
-        left: 10px;
-        @include display-flex();
-        @include width-height(40px, 100%);
+        left: 0;
+        display: flex;
+        align-items: center;
+        width: 80px;
+        height: 100%;
 
         &-icon {
+          margin-left: 25px;
           @include width-height(18px, 31px);
         }
       }

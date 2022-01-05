@@ -9,6 +9,8 @@ export default {
     'pages/tools/color-conversion/index',
     'pages/tools/base64/index',
     'pages/tools/regular/index',
+    'pages/tools/json-format/index',
+    'pages/tools/bar-code/index',
   ],
   window: {
     backgroundTextStyle: 'light',

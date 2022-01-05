@@ -7,7 +7,9 @@ const config = {
     areaCalculator: '/pages/tools/calculator/area/index',
     colorConversion: '/pages/tools/color-conversion/index',
     base64Conversion: '/pages/tools/base64/index',
-    regular: '/pages/tools/regular/index'
+    regular: '/pages/tools/regular/index',
+    jsonFormat: '/pages/tools/json-format/index',
+    barCode: '/pages/tools/bar-code/index'
   },
 
   services: {},

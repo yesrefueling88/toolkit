@@ -13985,6 +13985,14 @@ react-native-unimodules@~0.14.10:
     unimodules-app-loader "~2.2.0"
     unimodules-task-manager-interface "~6.2.0"
 
+react-native-webview@11.14.3:
+  version "11.14.3"
+  resolved "https://registry.npmmirror.com/react-native-webview/download/react-native-webview-11.14.3.tgz#31da92b8fd21f4d1192e057867478598153a6f5d"
+  integrity sha512-y/+7mE6by/uLGSIVmlp1xpJvL37rAuOL90EWTJYKZWL5iM8lN+pQkj/zwcPcGu4zNmuHdXXUk/cMR8hE89mNYg==
+  dependencies:
+    escape-string-regexp "2.0.0"
+    invariant "2.2.4"
+
 react-native-webview@~11.14.3:
   version "11.14.4"
   resolved "https://registry.npmmirror.com/react-native-webview/download/react-native-webview-11.14.4.tgz#e654714f1792901e5208fb03f2dc0a0fb4afc344"
