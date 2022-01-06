@@ -95,6 +95,11 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/bar-code.png')}
                 path={config.page.barCode}
               />
+              <ToolsItem
+                name='计算器'
+                icon={require('../../assets/images/calculator.png')}
+                path={config.page.calculator}
+              />
             </MenuPanel>
             <MenuPanel name='生活日常'>
               <ToolsItem
@@ -131,6 +136,11 @@ const Index: React.FC<any> = () => {
               />
             </MenuPanel>
             <MenuPanel name='计算换算'>
+              <ToolsItem
+                name='计算器'
+                icon={require('../../assets/images/calculator.png')}
+                path={config.page.calculator}
+              />
               <ToolsItem
                 name='体积计算器'
                 icon={require('../../assets/images/volume.png')}

@@ -11,6 +11,7 @@ export default {
     'pages/tools/regular/index',
     'pages/tools/json-format/index',
     'pages/tools/bar-code/index',
+    'pages/tools/calculator/normal/index',
   ],
   window: {
     backgroundTextStyle: 'light',

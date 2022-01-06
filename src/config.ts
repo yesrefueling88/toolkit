@@ -9,7 +9,8 @@ const config = {
     base64Conversion: '/pages/tools/base64/index',
     regular: '/pages/tools/regular/index',
     jsonFormat: '/pages/tools/json-format/index',
-    barCode: '/pages/tools/bar-code/index'
+    barCode: '/pages/tools/bar-code/index',
+    calculator: '/pages/tools/calculator/normal/index',
   },
 
   services: {},

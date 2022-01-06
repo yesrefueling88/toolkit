@@ -1,0 +1,81 @@
+@import '@style/index';
+
+.calculator {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  position: relative;
+
+  &__input-line {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    @include box-sizing-border-box();
+
+    &-text {
+      color: #000000;
+      font-size: 36px;
+    }
+  }
+
+  &__result-line {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    @include box-sizing-border-box();
+
+    &-text {
+      color: #000000;
+      font-size: 36px;
+    }
+  }
+
+  &__keyboard {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    @include box-sizing-border-box();
+
+    &-content {
+      height: 500px;
+
+      &-line {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+
+        &-item-wrap {
+          width: 25%;
+          height: 100%;
+          padding: 3px;
+          @include box-sizing-border-box();
+
+          &-detail {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1E90FF;
+
+            &-text {
+              color: #ffffff;
+              font-size: 36px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
