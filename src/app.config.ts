@@ -1,7 +1,6 @@
 export default {
   pages: [
     'pages/index/index',
-    'pages/tools/test/index',
     'pages/tools/qr-code/index',
     'pages/tools/calculator/volume/index',
     'pages/tools/calculator/surface-area/index',
@@ -12,6 +11,9 @@ export default {
     'pages/tools/json-format/index',
     'pages/tools/bar-code/index',
     'pages/tools/calculator/normal/index',
+    'pages/tools/stop-watch/index',
+    'pages/tools/time-screen/index',
+    'pages/tools/md5/index',
   ],
   window: {
     backgroundTextStyle: 'light',

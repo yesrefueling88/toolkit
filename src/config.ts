@@ -11,6 +11,9 @@ const config = {
     jsonFormat: '/pages/tools/json-format/index',
     barCode: '/pages/tools/bar-code/index',
     calculator: '/pages/tools/calculator/normal/index',
+    stopWatch: '/pages/tools/stop-watch/index',
+    timeScreen: '/pages/tools/time-screen/index',
+    md5: '/pages/tools/md5/index',
   },
 
   services: {},

@@ -41,7 +41,7 @@ const Index: React.FC<any> = () => {
             <MenuItem>生活日常</MenuItem>
             <MenuItem>编程开发</MenuItem>
             <MenuItem>计算换算</MenuItem>
-            <MenuItem>日期时间</MenuItem>
+            <MenuItem>加密解密</MenuItem>
             <MenuItem>文字编辑</MenuItem>
             <MenuItem>加密解密</MenuItem>
             <MenuItem>编程开发</MenuItem>
@@ -100,6 +100,21 @@ const Index: React.FC<any> = () => {
                 icon={require('../../assets/images/calculator.png')}
                 path={config.page.calculator}
               />
+              <ToolsItem
+                name='时间屏幕'
+                icon={require('../../assets/images/time-screen.png')}
+                path={config.page.timeScreen}
+              />
+              <ToolsItem
+                name='秒表'
+                icon={require('../../assets/images/stop-watch.png')}
+                path={config.page.stopWatch}
+              />
+              <ToolsItem
+                name='md5'
+                icon={require('../../assets/images/md5.png')}
+                path={config.page.md5}
+              />
             </MenuPanel>
             <MenuPanel name='生活日常'>
               <ToolsItem
@@ -111,6 +126,16 @@ const Index: React.FC<any> = () => {
                 name='生成条形码'
                 icon={require('../../assets/images/bar-code.png')}
                 path={config.page.barCode}
+              />
+              <ToolsItem
+                name='时间屏幕'
+                icon={require('../../assets/images/time-screen.png')}
+                path={config.page.timeScreen}
+              />
+              <ToolsItem
+                name='秒表'
+                icon={require('../../assets/images/stop-watch.png')}
+                path={config.page.stopWatch}
               />
             </MenuPanel>
             <MenuPanel name='编程开发'>
@@ -157,9 +182,15 @@ const Index: React.FC<any> = () => {
                 path={config.page.areaCalculator}
               />
             </MenuPanel>
-            <MenuPanel name='日期时间'><View className='test2'></View></MenuPanel>
+            <MenuPanel name='加密解密'>
+              <ToolsItem
+                name='md5'
+                icon={require('../../assets/images/md5.png')}
+                path={config.page.md5}
+              />
+            </MenuPanel>
             <MenuPanel name='文字编辑'><View className='test3'></View></MenuPanel>
-            <MenuPanel name='加密解密'><View className='test1'></View></MenuPanel>
+            <MenuPanel name='日期时间'><View className='test1'></View></MenuPanel>
             <MenuPanel name='图形图形'><View className='test2'></View></MenuPanel>
             <MenuPanel name='计算换算'><View className='test3'></View></MenuPanel>
             <MenuPanel name='生活日常'><View className='test1'></View></MenuPanel>

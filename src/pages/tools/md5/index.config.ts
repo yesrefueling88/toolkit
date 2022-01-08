@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: '二维码生成',
+  navigationBarTitleText: 'md5',
   navigationStyle: 'custom'
 }

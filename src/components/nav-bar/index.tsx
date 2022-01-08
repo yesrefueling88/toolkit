@@ -12,6 +12,8 @@ type Props = {
   title?: string, //页面标题
   onBack?: Function | null,
   notFixed?: boolean, //是否固定在顶部
+  bgColor?: string, //背景颜色
+  statusBarColor?: string, //状态栏背景颜色
 }
 
 type StateType = {
@@ -25,6 +27,8 @@ const NavBar: React.FC<Props> = ({
   title = '工具箱',
   onBack = null,
   notFixed = false,
+  bgColor = null,
+  statusBarColor = null,
 }) => {
   const dispatch = useDispatch();
   let {
@@ -66,7 +70,13 @@ const NavBar: React.FC<Props> = ({
         {(IS_H5 || IS_RN) && (
           <Block>
             {!isHomePage ? (
-              <View className='c-nav-bar'>
+              <View
+                className='c-nav-bar'
+                style={!!bgColor
+                  ? (IS_RN ? { backgroundColor: bgColor } : `background-color:${bgColor}`)
+                  : ''
+                }
+              >
                 <View
                   className='c-nav-bar-back'
                   onClick={handleClick}
@@ -99,11 +109,17 @@ const NavBar: React.FC<Props> = ({
           >
             <View
               className='c-nav-bar-status-bar'
-              style={`height:${statusBarHeight}px`}
+              style={!!statusBarColor
+                ? `height:${statusBarHeight}px;background-color:${statusBarColor};`
+                : `height:${statusBarHeight}px`
+              }
             />
             <View
               className='c-nav-bar-container'
-              style={`height:${navBarHeight}px;`}
+              style={!!bgColor
+                ? `height:${navBarHeight}px;background-color:${bgColor};`
+                : `height:${navBarHeight}px;`
+              }
             >
               <View
                 className='c-nav-bar-container-content'

@@ -6,9 +6,9 @@ import './index.scss'
 
 const Index: React.FC<any> = () => {
   return (
-    <View className='test'>
+    <View className='md5'>
       <NavBar
-        title='测试'
+        title='md5'
       />
       <Text>Test</Text>
     </View>
