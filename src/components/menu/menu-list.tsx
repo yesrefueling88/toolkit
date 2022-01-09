@@ -1,24 +1,32 @@
-import React, { forwardRef, ReactElement } from "react";
+import React, { forwardRef, ReactElement, useImperativeHandle, useState } from "react";
 import { View } from '@tarojs/components'
 import './menu-list.scss'
 
 type Props = {
   children: Array<ReactElement>,
-  selectedIndex: number,  // 当前选中的menuItem值
-  onSetSelectIndex: Function,  // 设置当前选中的menuItem值
   style: string,  // CSS样式
   itemStyle: string,  // 子元素CSS样式
+  onSelectItem: Function,
 }
 
 // @ts-ignore
 const MenuList: any = forwardRef((props: Props, ref) => {
   const {
     children,
-    selectedIndex,
-    onSetSelectIndex,
     style = '',
-    itemStyle = ''
+    itemStyle = '',
+    onSelectItem = () => {},
   } = props;
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useImperativeHandle(ref, () => ({
+    setIndex: (index: number) => {
+      setSelectedIndex(index)
+    },
+    getIndex: () => {
+      return selectedIndex
+    },
+  }));
 
   return (
     <View
@@ -31,9 +39,7 @@ const MenuList: any = forwardRef((props: Props, ref) => {
           index: index,
           style: itemStyle,
           isSelected: index === selectedIndex,
-          onClick: (tabIndex: number) => {
-            onSetSelectIndex(tabIndex)
-          }
+          onSelectItem: onSelectItem,
         })
       })}
     </View>

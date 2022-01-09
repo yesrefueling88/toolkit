@@ -68,7 +68,7 @@ const Index: React.FC<any> = () => {
   };
 
   const onPause = () => {
-    if (isPausedRef.current) {
+    if (isPausedRef.current || !startTimeRef.current) {
       return
     }
 

@@ -7,7 +7,7 @@ type Props = {
   index: 0,  // 当前索引
   isSelected: false,  // 当前menuItem是否选中
   style: string,  // CSS样式
-  onClick: Function,  // 点击munuItem后, 将当前组件索引回传给上一级组件
+  onSelectItem: Function,  // 点击munuItem后, 将当前组件索引回传给上一级组件
 }
 
 // @ts-ignore
@@ -17,14 +17,15 @@ const MenuItem: any = forwardRef((props: Props, ref) => {
     index,
     isSelected,
     style = '',
-    onClick
+    onSelectItem = () => {},
   } = props;
-
   return (
     <View
       className={isSelected ? 'c-menu-item active' : 'c-menu-item'}
       style={style}
-      onClick={() => onClick(index)}
+      onClick={() => {
+        onSelectItem(index)
+      }}
     >
       {isSelected && <View className='c-menu-item-flag'></View>}
       <Text

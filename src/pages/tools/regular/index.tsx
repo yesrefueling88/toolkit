@@ -3,6 +3,7 @@ import { Input, Text, View } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import TextArea from "@components/editor/text-area";
 import './index.scss'
+import { toast } from "@utils/index";
 
 const Index: React.FC<any> = () => {
   const [temp, setTemp] = useState('');
@@ -19,6 +20,11 @@ const Index: React.FC<any> = () => {
   };
 
   const onRegular = () => {
+    if (!temp) {
+      toast('请输入正确的待匹配文本');
+      return
+    }
+
     let pattern = new RegExp(regular, 'gi');
     let res = temp.match(pattern);
     let newText = '';

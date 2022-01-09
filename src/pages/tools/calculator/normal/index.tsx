@@ -34,6 +34,68 @@ const Index: React.FC<any> = () => {
     const func = ['平方', '清空', '退格', '√', '='];
 
     if (isCalclated && currentKey !== '清空') {
+      if (['+', '-', 'x', '/', '平方', '√',].includes(currentKey)) {
+        switch (currentKey) {
+          case '+':
+            unstable_batchedUpdates(() => {
+              setIsCalclated(false);
+              setFirstValue(result);
+              setOperatorFlag(currentKey);
+              setSecondValue('');
+              setResult('');
+            });
+            break;
+          case '-':
+            unstable_batchedUpdates(() => {
+              setIsCalclated(false);
+              setFirstValue(result);
+              setOperatorFlag(currentKey);
+              setSecondValue('');
+              setResult('');
+            });
+            break;
+          case 'x':
+            unstable_batchedUpdates(() => {
+              setIsCalclated(false);
+              setFirstValue(result);
+              setOperatorFlag(currentKey);
+              setSecondValue('');
+              setResult('');
+            });
+            break;
+          case '/':
+            unstable_batchedUpdates(() => {
+              setIsCalclated(false);
+              setFirstValue(result);
+              setOperatorFlag(currentKey);
+              setSecondValue('');
+              setResult('');
+            });
+            break;
+          case '平方':
+            unstable_batchedUpdates(() => {
+              setFirstValue(result + '^2');
+              setOperatorFlag('');
+              setSecondValue('');
+              setResult(String(Math.pow(parseFloat(result), 2)));
+              setIsCalclated(true);
+            });
+            break;
+          case '√':
+            unstable_batchedUpdates(() => {
+              setFirstValue('√' + result);
+              setOperatorFlag('');
+              setSecondValue('');
+              setResult(String(Math.sqrt(parseFloat(result))));
+              setIsCalclated(true);
+            });
+            break;
+          default:
+            break;
+        }
+        return
+      }
+
       setTimeout(function () {
         unstable_batchedUpdates(() => {
           setIsCalclated(false);

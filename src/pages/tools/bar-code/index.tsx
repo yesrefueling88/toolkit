@@ -17,8 +17,9 @@ const Index: React.FC<any> = () => {
   }, []);
 
   const handerClick = () => {
-    const reg = /([\u4E00-\u9FFF]+)|([\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b]+)/g;
-    if (reg.test(temp)) {
+    const reg = /[0-9]+/g;
+    const temp_bak=temp.replace(reg,'');
+    if (temp_bak.length>0) {
       toast('请输入正确的值');
       return
     }

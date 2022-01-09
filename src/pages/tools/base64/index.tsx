@@ -67,7 +67,7 @@ const Index: React.FC<any> = () => {
             name='打开图片'
             backgroundColor='#1E90FF'
             onClick={() => {
-              chooseImage({ count: 1 }).then((res: {
+              chooseImage({ count: 1, sizeType: 'compressed' }).then((res: {
                 success: boolean,
                 path: string,
                 paths: string,

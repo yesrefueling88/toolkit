@@ -141,7 +141,7 @@ export function chooseImage ({
   sourceType = ['album', 'camera'],
 }: {
   count?: number,
-  sizeType?: string[],
+  sizeType?: string[] | string,
   sourceType?: string[],
 }) {
   return new Promise((resolve, reject) => {

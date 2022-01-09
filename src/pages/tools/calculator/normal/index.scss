@@ -47,11 +47,11 @@
     @include box-sizing-border-box();
 
     &-content {
-      height: 500px;
+      height: 625px;
 
       &-line {
         width: 100%;
-        height: 100px;
+        height: 125px;
         display: flex;
         flex-direction: row;
 

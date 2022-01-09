@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement, useState } from "react";
+import React, { forwardRef, ReactElement, useRef, useState } from "react";
 import { View } from '@tarojs/components'
 import './menu.scss'
 
@@ -18,12 +18,15 @@ export interface MenuAnchorItem {
 
 // @ts-ignore
 const Menu: any = forwardRef((props: Props, ref) => {
+  const menusRef = useRef();
+  const panelsRef = useRef();
   const { children, style = '', scrollOffSet = 0 } = props;
-  // 当前选中的menuItem值
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollWithAnimation, setScrollWithAnimation] = useState(false);
   // menuItem的锚点对象映射
   const [anchorMap] = useState(new Map<number, MenuAnchorItem>());
+  const [panelsDataMap] = useState(new Map([
+    ['setFinalScrollTop', -1],
+    ['currentSelectedIndex', 0],
+  ]));
 
   return (
     <View
@@ -34,27 +37,44 @@ const Menu: any = forwardRef((props: Props, ref) => {
         let porps;
         index === 0 && (porps = {
           key: index,
-          selectedIndex: selectedIndex,
-          onSetSelectIndex: (tabIndex) => {
-            if (selectedIndex == tabIndex) return;
-            setScrollWithAnimation(!scrollWithAnimation)
-            setTimeout(() => {
-              setSelectedIndex(tabIndex);
-            }, 50)
+          ref: menusRef,
+          onSelectItem: (itemIndex: number) => {
+            const currentPanelsSelectedIndex = panelsDataMap.get('currentSelectedIndex');
+
+            if (itemIndex === currentPanelsSelectedIndex) {
+              return
+            }
+
+            // @ts-ignore
+            menusRef.current.setIndex(itemIndex);
+            panelsDataMap.set('currentSelectedIndex', itemIndex);
+            let anchor = anchorMap.get(itemIndex);
+            anchor != undefined && panelsDataMap.set('setFinalScrollTop', anchor.top - scrollOffSet);
+            // @ts-ignore
+            if (itemIndex === panelsRef.current.getIndex() && itemIndex !== currentPanelsSelectedIndex) {
+              // @ts-ignore
+              panelsRef.current.setIndex(currentPanelsSelectedIndex);
+              setTimeout(() => {
+                // @ts-ignore
+                panelsRef.current.setIndex(itemIndex)
+              }, 0)
+            } else {
+              // @ts-ignore
+              panelsRef.current.setIndex(itemIndex)
+            }
           }
         });
 
         index === 1 && (porps = {
           key: index,
-          selectedIndex: selectedIndex,
+          ref: panelsRef,
           anchorMap: anchorMap,
+          panelsDataMap: panelsDataMap,
           scrollOffSet: scrollOffSet,
-          scrollWithAnimation: scrollWithAnimation,
-          onSetSelectIndex: (tabIndex) => {
-            if (selectedIndex == tabIndex) return;
-
-            setSelectedIndex(tabIndex);
-          }
+          onChooseMenuItem: (itemIndex: number) => {
+            // @ts-ignore
+            menusRef.current.setIndex(itemIndex)
+          },
         });
 
         return React.cloneElement(child, porps)
