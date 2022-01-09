@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'md5',
+  navigationBarTitleText: 'md5加密',
   navigationStyle: 'custom'
 }
