@@ -13,7 +13,7 @@ const config = {
     calculator: '/pages/tools/calculator/normal/index',
     stopWatch: '/pages/tools/stop-watch/index',
     timeScreen: '/pages/tools/time-screen/index',
-    md5: '/pages/tools/md5/index',
+    caseConversion: '/pages/tools/case-conversion/index',
   },
 
   services: {},

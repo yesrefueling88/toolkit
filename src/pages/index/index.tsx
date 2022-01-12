@@ -25,6 +25,7 @@ const Index: React.FC<any> = () => {
   return (
     <View className='index'>
       <NavBar
+        title='小e工具箱'
         isHomePage
       />
       {(navHeight > 0 || IS_RN) && (
@@ -41,7 +42,7 @@ const Index: React.FC<any> = () => {
             <MenuItem>编程开发</MenuItem>
             <MenuItem>计算换算</MenuItem>
             <MenuItem>生活日常</MenuItem>
-            <MenuItem>加密解密</MenuItem>
+            <MenuItem>文字编辑</MenuItem>
             <MenuItem>更多工具</MenuItem>
           </MenuList>
           <MenuPanels>
@@ -67,9 +68,9 @@ const Index: React.FC<any> = () => {
                 path={config.page.timeScreen}
               />
               <ToolsItem
-                name='md5加密'
-                icon={require('../../assets/images/md5.png')}
-                path={config.page.md5}
+                name='英文大小写转换'
+                icon={require('../../assets/images/case-conversion.png')}
+                path={config.page.caseConversion}
               />
             </MenuPanel>
             <MenuPanel name='编程开发'>
@@ -138,11 +139,11 @@ const Index: React.FC<any> = () => {
                 path={config.page.stopWatch}
               />
             </MenuPanel>
-            <MenuPanel name='加密解密'>
+            <MenuPanel name='文字编辑'>
               <ToolsItem
-                name='md5加密'
-                icon={require('../../assets/images/md5.png')}
-                path={config.page.md5}
+                name='英文大小写转换'
+                icon={require('../../assets/images/case-conversion.png')}
+                path={config.page.caseConversion}
               />
             </MenuPanel>
             <MenuPanel name='更多工具'>

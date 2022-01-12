@@ -13,7 +13,7 @@ export default {
     'pages/tools/calculator/normal/index',
     'pages/tools/stop-watch/index',
     'pages/tools/time-screen/index',
-    'pages/tools/md5/index',
+    'pages/tools/case-conversion/index',
   ],
   window: {
     backgroundTextStyle: 'light',
