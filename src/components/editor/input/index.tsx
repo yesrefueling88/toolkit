@@ -28,16 +28,16 @@ const Input: React.FC<Props> = ({
       style={style}
     >
       <View
-        className='c-input-label'
+        className='c-input__label'
         style={labelStyle}
       >
-        <Text className='c-input-label-text'>{`${label} =`}</Text>
+        <Text className='c-input__label-text'>{`${label} =`}</Text>
       </View>
-      <View className='c-input-content'>
-        <View className='c-input-content-taro-input'>
+      <View className='c-input__content'>
+        <View className='c-input__content-taro-input'>
           <TaroInput
-            className='c-input-content-taro-input-style'
-            placeholderClass='c-input-content-taro-input-placeholder'
+            className='c-input__content-taro-input-style'
+            placeholderClass='c-input__content-taro-input-placeholder'
             placeholder={placeholder}
             value={content}
             type={type}

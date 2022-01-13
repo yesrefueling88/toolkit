@@ -2,8 +2,8 @@ import React, { useMemo, useState } from 'react'
 import { Input, Text, View } from '@tarojs/components'
 import NavBar from "@components/nav-bar";
 import TextArea from "@components/editor/text-area";
-import './index.scss'
 import { toast } from "@utils/index";
+import './index.scss'
 
 const Index: React.FC<any> = () => {
   const [temp, setTemp] = useState('');
@@ -51,12 +51,12 @@ const Index: React.FC<any> = () => {
           reset()
         }}
       />
-      <View className='regular-input'>
-        <View className='regular-input-content'>
+      <View className='regular__input'>
+        <View className='regular__input-content'>
           <Input
-            className='regular-input-content-input-style'
+            className='regular__input-content-comp-style'
             placeholder='请输入正则表达式...'
-            placeholderClass='regular-input-content-placeholder'
+            placeholderClass='regular__input-content-placeholder'
             value={regular}
             onInput={(event) => {
               let { detail: { value } } = event;
@@ -65,11 +65,11 @@ const Index: React.FC<any> = () => {
             }}
           />
         </View>
-        <View className='regular-input-clear' onClick={onClear}>
-          <Text className='regular-input-clear-text'>清空</Text>
+        <View className='regular__input-clear' onClick={onClear}>
+          <Text className='regular__input-clear-text'>清空</Text>
         </View>
-        <View className='regular-input-start' onClick={onRegular}>
-          <Text className='regular-input-start-text'>匹配</Text>
+        <View className='regular__input-start' onClick={onRegular}>
+          <Text className='regular__input-start-text'>匹配</Text>
         </View>
       </View>
 

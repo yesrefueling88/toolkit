@@ -1,24 +1,24 @@
-@import '@style/index';
-
 .c-menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   width: auto;
   height: 80px;
   padding: 0px 20px;
-  @include box-sizing-border-box();
-  position: relative;
+  /* #ifndef rn */
+  box-sizing: border-box;
+  /* #endif */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &-flag {
+  &__flag {
+    position: absolute;
+    left: 0;
     width: 7px;
     height: 40%;
     background-color: #333333;
-    position: absolute;
-    left: 0;
   }
 
-  &-text {
+  &__text {
     font-size: 28px;
     color: #828282;
   }

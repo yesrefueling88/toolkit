@@ -22,14 +22,14 @@ const ToolsItem: React.FC<Props> = ({
 
   return (
     <View className='c-tool-item' onClick={handleClick}>
-      <View className='c-tool-item-icon-wrap'>
+      <View className='c-tool-item__icon-wrap'>
         <Image
           src={icon}
-          className='c-tool-item-icon-wrap-icon'
+          className='c-tool-item__icon-wrap-icon'
         />
       </View>
-      <View className='c-tool-item-title-wrap'>
-        <Text className='c-tool-item-title-wrap-text'>{name}</Text>
+      <View className='c-tool-item__title-wrap'>
+        <Text className='c-tool-item__title-wrap-text'>{name}</Text>
       </View>
     </View>
   )

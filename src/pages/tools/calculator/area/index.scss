@@ -1,15 +1,13 @@
-@import '@style/index';
-
 .area {
   width: 100%;
   height: 100%;
   background-color: whitesmoke;
 
-  &-input-groups {
+  &__input-groups {
     margin-bottom: 20px;
   }
 
-  &-result {
+  &__result {
     width: 100%;
     height: 90px;
     /* #ifdef rn */

@@ -50,7 +50,7 @@ const Index: React.FC<any> = () => {
           setSelectorChecked(parseInt(index))
         }}
       />
-      <View className='volume-input-groups'>
+      <View className='volume__input-groups'>
         {selectorChecked === shapeType.Cylinder && (
           <Cylinder
             ref={componentRef}
@@ -111,17 +111,17 @@ const Index: React.FC<any> = () => {
         onClick={handerClick}
       />
       {!!result && (
-        <View className='volume-result'>
+        <View className='volume__result'>
           <View
-            className='volume-result-label'
+            className='volume__result-label'
           >
-            <Text className='volume-result-label-text'>
+            <Text className='volume__result-label-text'>
               体积（V） =
             </Text>
           </View>
-          <View className='volume-result-content'>
-            <View className='volume-result-content-num'>
-              <Text className='volume-result-content-num-text'>
+          <View className='volume__result-content'>
+            <View className='volume__result-content-num'>
+              <Text className='volume__result-content-num-text'>
                 {result}
               </Text>
             </View>

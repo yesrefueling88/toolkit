@@ -25,7 +25,7 @@ const Index: React.FC<any> = () => {
       <NavBar
         title='生成二维码'
       />
-      <View className='qr-code-content'>
+      <View className='qr-code__content'>
         {useMemo(() => {
           if (canShowToast) {
             setTimeout(() => {
@@ -44,8 +44,8 @@ const Index: React.FC<any> = () => {
           )
         }, [text])}
         {false && (
-          <View className='qr-code-content-save'>
-            <Text className='qr-code-content-save-btn'>保存图片</Text>
+          <View className='qr-code__content-save'>
+            <Text className='qr-code__content-save-btn'>保存图片</Text>
           </View>
         )}
       </View>

@@ -95,7 +95,7 @@ const Index: React.FC<any> = () => {
           setSelectorChecked(parseInt(index))
         }}
       />
-      <View className='color-conver-input-groups'>
+      <View className='color-conver__input-groups'>
         {selectorChecked === 0 && (
           <Block>
             <Input
@@ -164,19 +164,19 @@ const Index: React.FC<any> = () => {
       {useMemo(() => {
         return (
           !!result && (
-            <View className='color-conver-result'>
-              <View className='color-conver-result-content'>
+            <View className='color-conver__result'>
+              <View className='color-conver__result-content'>
                 <Text
-                  className='color-conver-result-content-text'
+                  className='color-conver__result-content-text'
                 >
                   {`${result}`}
                 </Text>
               </View>
               <View
-                className='color-conver-result-color-show'
+                className='color-conver__result-color-show'
               >
                 <View
-                  className='color-conver-result-color-show-detail'
+                  className='color-conver__result-color-show-detail'
                   style={IS_RN
                     ? { backgroundColor: result }
                     : `background-color:${result}`}

@@ -78,11 +78,11 @@ const NavBar: React.FC<Props> = ({
                 }
               >
                 <View
-                  className='c-nav-bar-back'
+                  className='c-nav-bar__back'
                   onClick={handleClick}
                 >
                   <Image
-                    className='c-nav-bar-back-icon'
+                    className='c-nav-bar__back-icon'
                     src={require('../../assets/images/back.png')}
                   />
                 </View>
@@ -90,9 +90,9 @@ const NavBar: React.FC<Props> = ({
               </View>
             ) : (
               <View className='c-nav-bar'>
-                <View className='c-nav-bar-logo'>
+                <View className='c-nav-bar__logo'>
                   <Image
-                    className='c-nav-bar-logo-icon'
+                    className='c-nav-bar__logo-icon'
                     src={require('../../assets/images/logo.png')}
                   />
                 </View>
@@ -108,36 +108,36 @@ const NavBar: React.FC<Props> = ({
             style={`height:${statusBarHeight + navBarHeight}px;`}
           >
             <View
-              className='c-nav-bar-status-bar'
+              className='c-nav-bar__status-bar'
               style={!!statusBarColor
                 ? `height:${statusBarHeight}px;background-color:${statusBarColor};`
                 : `height:${statusBarHeight}px`
               }
             />
             <View
-              className='c-nav-bar-container'
+              className='c-nav-bar__container'
               style={!!bgColor
                 ? `height:${navBarHeight}px;background-color:${bgColor};`
                 : `height:${navBarHeight}px;`
               }
             >
               <View
-                className='c-nav-bar-container-content'
+                className='c-nav-bar__container-content'
                 style={`height:${navBarContentHeight}px`}
               >
                 {!isHomePage ? (
                   <Block>
                     <View
-                      className='c-nav-bar-container-content-back'
+                      className='c-nav-bar__container-content-back'
                       onClick={handleClick}
                     >
                       <Image
-                        className='c-nav-bar-container-content-back-icon'
+                        className='c-nav-bar__container-content-back-icon'
                         src={require('../../assets/images/back.png')}
                       />
                     </View>
                     <Text
-                      className='c-nav-bar-container-content-title'
+                      className='c-nav-bar__container-content-title'
                       style={`line-height:${navBarContentHeight}px;`}
                     >
                       {title}
@@ -146,11 +146,11 @@ const NavBar: React.FC<Props> = ({
                 ) : (
                   <Block>
                     <Image
-                      className='c-nav-bar-container-content-logo'
+                      className='c-nav-bar__container-content-logo'
                       src={require('../../assets/images/logo.png')}
                     />
                     <Text
-                      className='c-nav-bar-container-content-title'
+                      className='c-nav-bar__container-content-title'
                       style={`line-height:${navBarContentHeight}px;`}
                     >
                       {title}

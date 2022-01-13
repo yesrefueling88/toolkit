@@ -73,7 +73,7 @@ const TextArea: React.FC<Props> = ({
       style={style}
     >
       <Textarea
-        className='c-text-area-content'
+        className='c-text-area__content'
         // @ts-ignore
         style={{ textAlignVertical: 'top' }}
         disabled={disabled}
@@ -86,28 +86,30 @@ const TextArea: React.FC<Props> = ({
           setValue(content);
         }}
       />
+
       <View
-        className='c-text-area-copy'
+        className='c-text-area__copy'
         onClick={onCopy}
       >
-        <Text className='c-text-area-copy-text'>复制</Text>
+        <Text className='c-text-area__copy-text'>复制</Text>
       </View>
+
       {!isHidePasteBtn && (
         <View
-          className='c-text-area-paste'
+          className='c-text-area__paste'
           onClick={onPaste}
         >
-          <Text className='c-text-area-paste-text'>粘贴</Text>
+          <Text className='c-text-area__paste-text'>粘贴</Text>
         </View>
       )}
 
       {!isHideClearBtn && (
         <View
-          className='c-text-area-clear'
+          className='c-text-area__clear'
           onClick={onClear}
         >
           <Image
-            className='c-text-area-clear-img'
+            className='c-text-area__clear-img'
             src={require('../../../assets/images/clear.png')}
           />
         </View>

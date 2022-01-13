@@ -29,8 +29,8 @@ const MenuPanel: any = memo(forwardRef((props: Props, ref) => {
         anchorMap.set(id, { top, bottom, width, height });
       }}
     >
-      <View className='c-menu-panel-name'>
-        <Text className='c-menu-panel-name-text'>{name}</Text>
+      <View className='c-menu-panel__name'>
+        <Text className='c-menu-panel__name-text'>{name}</Text>
       </View>
       {children}
     </View>

@@ -1,42 +1,54 @@
-@import '@style/index';
-
 // h5、RN
 /* #ifdef h5 | rn */
 .c-nav-bar {
-  @include display-flex();
-  flex-direction: row;
-  @include width-height(100%, 90px);
-  @include box-sizing-border-box();
-  background-color: #333333;
   position: relative;
+  width: 100%;
+  height: 90px;
+  /* #ifndef rn */
+  box-sizing: border-box;
+  /* #endif */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
 
-  &-back {
+
+  &__back {
     position: absolute;
     left: 5px;
-    @include display-flex();
-    @include width-height(60px);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-icon {
-      @include width-height(20px, 35px);
+      width: 20px;
+      height: 35px;
     }
   }
 
-  &-logo {
+  &__logo {
     position: absolute;
     left: 20px;
-    @include display-flex();
-    @include width-height(60px);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
 
     &-icon {
-      @include width-height(90%);
+      width: 90%;
+      height: 90%;
     }
   }
 
   &-title {
-    color: #ffffff;
     font-size: 36px;
+    color: #ffffff;
   }
 }
 
@@ -46,21 +58,27 @@
 /* #ifdef weapp */
 .c-nav-bar {
 
-  &-status-bar {
+  &__status-bar {
     width: 100%;
     background-color: #ffffff;
   }
 
-  &-container {
-    @include display-flex($hCenter: false);
+  &__container {
     width: 100%;
+    display: flex;
+    align-items: center;
     background-color: #333333;;
 
     &-content {
-      @include display-flex();
-      @include width-height(100%);
-      @include box-sizing-border-box();
       position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* #ifndef rn */
+      box-sizing: border-box;
+      /* #endif */
 
       &-back {
         position: absolute;
@@ -72,21 +90,23 @@
 
         &-icon {
           margin-left: 25px;
-          @include width-height(18px, 31px);
+          width: 18px;
+          height: 31px;
         }
       }
 
       &-logo {
         position: absolute;
         left: 20px;
-        @include width-height(50px);
+        width: 50px;
+        height: 50px;
         border: 1px solid rgb(255, 255, 255);
         border-radius: 10px;
       }
 
       &-title {
-        color: #ffffff;
         font-size: 32px;
+        color: #ffffff;
       }
     }
   }

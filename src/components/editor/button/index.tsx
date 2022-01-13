@@ -22,7 +22,7 @@ const Button: React.FC<Props> = ({
       style={style}
     >
       <View
-        className='c-button-content'
+        className='c-button__content'
         style={
           IS_RN
             ? { backgroundColor: backgroundColor }
@@ -32,7 +32,7 @@ const Button: React.FC<Props> = ({
           onClick()
         }}
       >
-        <Text className='c-button-content-text'>{name}</Text>
+        <Text className='c-button__content-text'>{name}</Text>
       </View>
     </View>
   )

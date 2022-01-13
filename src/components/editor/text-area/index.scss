@@ -1,16 +1,18 @@
-@import '@style/index';
-
 .c-text-area {
-  padding: 20px 20px;
-  @include box-sizing-border-box();
   position: relative;
+  padding: 20px 20px;
+  /* #ifndef rn */
+  box-sizing: border-box;
+  /* #endif */
 
-  &-content {
+  &__content {
     width: 100%;
     height: 300px;
     /* #ifndef h5 */
     padding: 20px 20px 50px 20px;
-    @include box-sizing-border-box();
+    /* #ifndef rn */
+    box-sizing: border-box;
+    /* #endif */
     background-color: #ffffff;
     font-size: 30px;
     /* #endif */
@@ -20,12 +22,14 @@
     width: 100%;
     height: 250px;
     padding: 20px 20px 0 20px;
-    @include box-sizing-border-box();
+    /* #ifndef rn */
+    box-sizing: border-box;
+    /* #endif */
     background-color: #ffffff;
     font-size: 30px;
   }
 
-  &-copy {
+  &__copy {
     position: absolute;
     left: 35px;
     bottom: 20px;
@@ -37,12 +41,12 @@
     justify-content: center;
 
     &-text {
-      color: #1E90FF;
       font-size: 26px;
+      color: #1E90FF;
     }
   }
 
-  &-paste {
+  &__paste {
     position: absolute;
     left: 105px;
     bottom: 20px;
@@ -54,12 +58,12 @@
     justify-content: center;
 
     &-text {
-      color: #1E90FF;
       font-size: 26px;
+      color: #1E90FF;
     }
   }
 
-  &-clear {
+  &__clear {
     position: absolute;
     right: 20px;
     bottom: 20px;

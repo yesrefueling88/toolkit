@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Text, View } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-
+import NavBar from "@components/nav-bar"
 import './index.scss'
 
 let timer;

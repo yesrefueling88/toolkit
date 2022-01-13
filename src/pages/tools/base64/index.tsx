@@ -120,9 +120,9 @@ const Index: React.FC<any> = () => {
       {useMemo(() => {
         return (
           !!text && (
-            <View className='base64-img-show'>
+            <View className='base64__img-show'>
               <Image
-                className='base64-img-show-content'
+                className='base64__img-show-content'
                 src={text}
                 mode='heightFix'
                 style={IS_RN && { width: imgSize.width, height: imgSize.height }}

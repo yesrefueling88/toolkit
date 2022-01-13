@@ -18,8 +18,8 @@ const Index: React.FC<any> = () => {
 
   const handerClick = () => {
     const reg = /[0-9]+/g;
-    const temp_bak=temp.replace(reg,'');
-    if (temp_bak.length>0) {
+    const temp_bak = temp.replace(reg, '');
+    if (temp_bak.length > 0) {
       toast('请输入正确的值');
       return
     }
@@ -32,7 +32,7 @@ const Index: React.FC<any> = () => {
       <NavBar
         title='生成条形码'
       />
-      <View className='bar-code-content'>
+      <View className='bar-code__content'>
         {useMemo(() => {
           if (canShowToast) {
             setTimeout(() => {
@@ -50,8 +50,8 @@ const Index: React.FC<any> = () => {
           )
         }, [text])}
         {false && (
-          <View className='bar-code-content-save'>
-            <Text className='bar-code-content-save-btn'>保存图片</Text>
+          <View className='bar-code__content-save'>
+            <Text className='bar-code__content-save-btn'>保存图片</Text>
           </View>
         )}
       </View>

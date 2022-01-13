@@ -50,7 +50,7 @@ const Index: React.FC<any> = () => {
           setSelectorChecked(parseInt(index))
         }}
       />
-      <View className='surface-area-input-groups'>
+      <View className='surface-area__input-groups'>
         {selectorChecked === shapeType.Cylinder && (
           <Cylinder
             ref={componentRef}
@@ -111,17 +111,17 @@ const Index: React.FC<any> = () => {
         onClick={handerClick}
       />
       {!!result && (
-        <View className='surface-area-result'>
+        <View className='surface-area__result'>
           <View
-            className='surface-area-result-label'
+            className='surface-area__result-label'
           >
-            <Text className='surface-area-result-label-text'>
+            <Text className='surface-area__result-label-text'>
               表面积（S） =
             </Text>
           </View>
-          <View className='surface-area-result-content'>
-            <View className='surface-area-result-content-num'>
-              <Text className='surface-area-result-content-num-text'>
+          <View className='surface-area__result-content'>
+            <View className='surface-area__result-content-num'>
+              <Text className='surface-area__result-content-num-text'>
                 {result}
               </Text>
             </View>

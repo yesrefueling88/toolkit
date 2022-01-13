@@ -1,20 +1,20 @@
-@import '@style/index';
-
 .color-conver {
   width: 100%;
   height: 100%;
   background-color: whitesmoke;
 
-  &-input-groups {
+  &__input-groups {
     margin-bottom: 20px;
   }
 
-  &-result {
+  &__result {
+    margin-top: 10px;
     width: 100%;
     height: 200px;
-    margin-top: 10px;
     padding: 0 20px;
-    @include box-sizing-border-box();
+    /* #ifndef rn */
+    box-sizing: border-box;
+    /* #endif */
     display: flex;
     flex-direction: column;
 

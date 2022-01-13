@@ -54,7 +54,7 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
       className='c-menu-panels'
     >
       <ScrollView
-        className='c-menu-panels-scroll-view'
+        className='c-menu-panels__scroll-view'
         scrollY
         scrollTop={anchorMap.get(selectedIndex) != undefined ? (anchorMap.get(selectedIndex)!.top - scrollOffSet) : 0}
         scrollWithAnimation

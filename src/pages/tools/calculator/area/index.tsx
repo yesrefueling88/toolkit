@@ -50,7 +50,7 @@ const Index: React.FC<any> = () => {
           setSelectorChecked(parseInt(index))
         }}
       />
-      <View className='area-input-groups'>
+      <View className='area__input-groups'>
         {selectorChecked === shapeType.Square && (
           <Square
             ref={componentRef}
@@ -111,17 +111,17 @@ const Index: React.FC<any> = () => {
         onClick={handerClick}
       />
       {!!result && (
-        <View className='area-result'>
+        <View className='area__result'>
           <View
-            className='area-result-label'
+            className='area__result-label'
           >
-            <Text className='area-result-label-text'>
+            <Text className='area__result-label-text'>
               面积（S） =
             </Text>
           </View>
-          <View className='area-result-content'>
-            <View className='area-result-content-num'>
-              <Text className='area-result-content-num-text'>
+          <View className='area__result-content'>
+            <View className='area__result-content-num'>
+              <Text className='area__result-content-num-text'>
                 {result}
               </Text>
             </View>
