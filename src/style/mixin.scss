@@ -1,0 +1,9 @@
+/**
+  设置padding时，宽高自适应
+ */
+@mixin padding-box($value) {
+  padding: $value;
+  /* #ifndef rn */
+  box-sizing: border-box;
+  /* #endif */
+}

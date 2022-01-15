@@ -1,11 +1,10 @@
+@import '@style/index';
+
 .c-menu-item {
   position: relative;
   width: auto;
   height: 80px;
-  padding: 0px 20px;
-  /* #ifndef rn */
-  box-sizing: border-box;
-  /* #endif */
+  @include padding-box(0px 20px);
   display: flex;
   align-items: center;
   justify-content: center;

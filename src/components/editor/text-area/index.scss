@@ -1,9 +1,12 @@
+@import '@style/index';
+
 .c-text-area {
   position: relative;
   padding: 20px 20px;
   /* #ifndef rn */
   box-sizing: border-box;
   /* #endif */
+  @include padding-box(20px);
 
   &__content {
     width: 100%;

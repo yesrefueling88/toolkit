@@ -1,3 +1,5 @@
+@import '@style/index';
+
 .qr-code {
   width: 100%;
   height: 100%;
@@ -6,10 +8,7 @@
   &__content {
     width: 100%;
     height: 400px;
-    padding: 20px 0 0 0;
-    /* #ifndef rn */
-    box-sizing: border-box;
-    /* #endif */
+    @include padding-box(20px 0 0 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +22,7 @@
 
       &-btn {
         font-size: 32px;
-        color: #1E90FF;
+        color: $color-primary;
       }
     }
   }

@@ -1,3 +1,5 @@
+@import '@style/index';
+
 .calculator {
   position: relative;
   width: 100%;
@@ -7,10 +9,7 @@
   &__input-line {
     width: 100%;
     height: 60px;
-    padding: 0 10px;
-    /* #ifndef rn */
-    box-sizing: border-box;
-    /* #endif */
+    @include padding-box(0 10px);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -26,10 +25,7 @@
     margin-bottom: 10px;
     width: 100%;
     height: 60px;
-    padding: 0 10px;
-    /* #ifndef rn */
-    box-sizing: border-box;
-    /* #endif */
+    @include padding-box(0 10px);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -45,10 +41,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 10px;
-    /* #ifndef rn */
-    box-sizing: border-box;
-    /* #endif */
+    @include padding-box(10px);
 
     &-content {
       height: 625px;
@@ -62,10 +55,7 @@
         &-item-wrap {
           width: 25%;
           height: 100%;
-          padding: 3px;
-          /* #ifndef rn */
-          box-sizing: border-box;
-          /* #endif */
+          @include padding-box(3px);
 
           &-detail {
             width: 100%;
@@ -73,7 +63,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #1E90FF;
+            background-color: $color-primary;
 
             &-text {
               font-size: 36px;

@@ -1,3 +1,5 @@
+@import '@style/index';
+
 .stop-watch {
   width: 100%;
   height: 100%;
@@ -11,8 +13,8 @@
     align-items: center;
 
     &-text {
-      color: #000000;
       font-size: 100px;
+      color: #000000;
     }
   }
 
@@ -35,7 +37,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #FF4D4F;
+        background-color: $color-warning;
         border-radius: 10px;
 
         &-text {
@@ -58,7 +60,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #1E90FF;
+        background-color: $color-primary;
         border-radius: 10px;
 
         &-text {
@@ -81,7 +83,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #1E90FF;
+        background-color: $color-primary;
         border-radius: 10px;
 
         &-text {
