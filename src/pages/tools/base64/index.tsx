@@ -1,10 +1,12 @@
 import Taro from "@tarojs/taro";
 import React, { useMemo, useState } from 'react'
 import { Block, Image, View } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-import TextArea from "@components/editor/text-area";
-import Button from "@components/editor/button";
-import Picker from "@components/editor/picker";
+import {
+  NavBar,
+  TextArea,
+  Button,
+  Picker,
+} from '@components'
 import { chooseImage, readFileOnBase64 } from "@utils/index";
 import './index.scss'
 

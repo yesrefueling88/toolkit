@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-import Menu from "@components/menu/menu";
-import MenuList from "@components/menu/menu-list";
-import MenuPanels from "@components/menu/menu-panels";
-import MenuItem from "@components/menu/menu-item";
-import MenuPanel from "@components/menu/menu-panel";
+import {
+  NavBar,
+  Menu,
+  MenuList,
+  MenuPanels,
+  MenuItem,
+  MenuPanel,
+  ToolsItem,
+} from '@components'
 import { createSelectorQuery } from "@utils/taro";
-import ToolsItem from "@components/tools/item";
 import config from "../../config";
 import './index.scss'
 

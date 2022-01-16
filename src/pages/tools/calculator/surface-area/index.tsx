@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react'
 import { View, Text } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-import Button from "@components/editor/button";
-import Picker from "@components/editor/picker";
+import {
+  NavBar,
+  Button,
+  Picker,
+} from '@components'
 import Cylinder from "@pages/tools/calculator/surface-area/components/cylinder";
 import Cone from "@pages/tools/calculator/surface-area/components/cone";
 import Sphere from "@pages/tools/calculator/surface-area/components/sphere";

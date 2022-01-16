@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from 'react'
 import { Input, Text, View } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-import TextArea from "@components/editor/text-area";
+import {
+  NavBar,
+  TextArea,
+} from '@components'
 import { toast } from "@utils/index";
 import './index.scss'
 

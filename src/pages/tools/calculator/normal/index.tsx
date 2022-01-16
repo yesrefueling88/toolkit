@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View } from '@tarojs/components'
+import { NavBar } from '@components'
 import { unstable_batchedUpdates } from 'react-dom';//批量更新状态时使用
-import NavBar from "@components/nav-bar";
 import { toast } from "@utils/index";
 import './index.scss'
 

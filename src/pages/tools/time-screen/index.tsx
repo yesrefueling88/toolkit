@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Text, View } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
+import { NavBar } from '@components'
 import { createSelectorQuery } from "@utils/taro";
 import './index.scss'
 

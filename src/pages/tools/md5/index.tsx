@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from 'react'
 import { View } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-import TextArea from "@components/editor/text-area";
-import Button from "@components/editor/button";
+import {
+  NavBar,
+  TextArea,
+  Button,
+} from '@components'
 import { toast } from "@utils/index";
 import { hex_md5 } from './lib/md5'
 import './index.scss'

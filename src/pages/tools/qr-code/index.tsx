@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { View, Text } from '@tarojs/components'
-import NavBar from "@components/nav-bar";
-import QRCode from "@components/qr-code";
-import TextArea from "@components/editor/text-area";
-import Button from "@components/editor/button";
+import {
+  NavBar,
+  QRCode,
+  TextArea,
+  Button,
+} from '@components'
 import { toast } from "@utils/index";
 import './index.scss'
 
