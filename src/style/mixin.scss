@@ -7,3 +7,16 @@
   box-sizing: border-box;
   /* #endif */
 }
+
+/**
+  设置圆角
+ */
+@mixin border-radius($value) {
+  /* #ifndef rn */
+  border-radius: $value;
+  /* #endif */
+
+  /* #ifdef rn */
+  border-radius: $value/2;
+  /* #endif */
+}

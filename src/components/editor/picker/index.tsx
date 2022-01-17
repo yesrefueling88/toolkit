@@ -31,12 +31,12 @@ const Picker: React.FC<Props> = ({
       >
         <View className='c-picker__content'>
           <View className='c-picker__content-label'>
-            <Text className='c-picker__content-label-text'>{`当前选择: ${selectorChecked}`}</Text>
+            <Text className='c-picker__content-label-text'>{selectorChecked}</Text>
           </View>
           <View className='c-picker__content-icon'>
             <Image
               className='c-picker__content-icon-img'
-              src={require('../../../assets/images/right-arrow.png')}
+              src={require('../../../assets/images/down-arrow.png')}
             />
           </View>
         </View>

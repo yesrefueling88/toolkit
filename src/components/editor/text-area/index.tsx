@@ -31,6 +31,7 @@ const TextArea: React.FC<Props> = ({
   onClickClear = () => {},
 }) => {
   const [value, setValue] = useState('');
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     setValue(currentValue)
@@ -73,7 +74,10 @@ const TextArea: React.FC<Props> = ({
       style={style}
     >
       <Textarea
-        className='c-text-area__content'
+        className={isActive
+          ? 'c-text-area__content c-text-area__content--active'
+          : 'c-text-area__content'
+        }
         // @ts-ignore
         style={{ textAlignVertical: 'top' }}
         disabled={disabled}
@@ -84,6 +88,12 @@ const TextArea: React.FC<Props> = ({
           const { detail: { value: content } } = event;
           onInput({ content });
           setValue(content);
+        }}
+        onFocus={() => {
+          setIsActive(true);
+        }}
+        onBlur={() => {
+          setIsActive(false);
         }}
       />
 

@@ -2,28 +2,30 @@
 
 .c-text-area {
   position: relative;
-  padding: 20px 20px;
-  /* #ifndef rn */
-  box-sizing: border-box;
-  /* #endif */
   @include padding-box(20px);
 
   &__content {
     width: 100%;
-    height: 300px;
+    height: 310px;
     /* #ifndef h5 */
-    padding: 20px 20px 50px 20px;
+    padding: 20px 20px 55px 20px;
     /* #ifndef rn */
     box-sizing: border-box;
     /* #endif */
     background-color: #ffffff;
     font-size: 30px;
     /* #endif */
+    border: 1px solid $color-textarea-border-default;
+    @include border-radius(10px);
+
+    &--active {
+      border: 1px solid $color-textarea-border-active;
+    }
   }
 
   .taro-textarea {
     width: 100%;
-    height: 250px;
+    height: 255px;
     padding: 20px 20px 0 20px;
     /* #ifndef rn */
     box-sizing: border-box;
@@ -37,7 +39,7 @@
     left: 35px;
     bottom: 20px;
     width: 70px;
-    height: 50px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,7 +56,7 @@
     left: 105px;
     bottom: 20px;
     width: 70px;
-    height: 50px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -71,7 +73,7 @@
     right: 20px;
     bottom: 20px;
     width: 50px;
-    height: 50px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
