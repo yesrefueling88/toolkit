@@ -18,7 +18,7 @@
     /* #ifdef h5 */
     @include padding-box(10px 20px);
     /* #endif */
-    border: 1px solid rgb(217, 217, 217);
+    border: 2px solid $color-border-default;
     @include border-radius(10px);
 
     &-label {
@@ -33,7 +33,7 @@
     }
 
     &-icon {
-      margin-top: 3px;
+      margin-top: 5px;
       margin-left: 12px;
       display: flex;
       flex-direction: row;

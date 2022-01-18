@@ -3,13 +3,13 @@
 .regular {
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
+  background-color: #fff;
 
   &__input {
     width: 100%;
     height: 80px;
     /* #ifdef rn */
-    height: 90px;
+    height: 94px;
     /* #endif */
     @include padding-box(0 20px);
     display: flex;
@@ -23,6 +23,11 @@
       flex-direction: row;
       align-items: center;
       background-color: #ffffff;
+      border: 3px solid $color-border-default;
+      /* #ifndef rn */
+      box-sizing: border-box;
+      /* #endif */
+      border-right-width: 0;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
 

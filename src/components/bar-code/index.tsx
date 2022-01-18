@@ -40,7 +40,7 @@ const BarCode: React.FC<Props> = ({
         style={{
           width: Taro.getSystemInfoSync().screenWidth,
           height: 100,
-          backgroundColor: '#f5f5f5'
+          backgroundColor: '#fff'
         }}
       />
     )
