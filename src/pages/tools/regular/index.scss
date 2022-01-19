@@ -23,13 +23,19 @@
       flex-direction: row;
       align-items: center;
       background-color: #ffffff;
-      border: 3px solid $color-border-default;
+      border: 4px solid $color-border-default;
       /* #ifndef rn */
       box-sizing: border-box;
       /* #endif */
       border-right-width: 0;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
+
+      &--active {
+        border: 4px solid $color-border-active;
+        border-right-width: 0;
+        box-shadow: 0 0 8px $color-border-shadow;
+      }
 
       &-comp-style {
         margin-left: 20px;

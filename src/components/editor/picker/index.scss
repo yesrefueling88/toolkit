@@ -18,8 +18,8 @@
     /* #ifdef h5 */
     @include padding-box(10px 20px);
     /* #endif */
-    border: 2px solid $color-border-default;
-    @include border-radius(10px);
+    border: 4px solid $color-border-default;
+    border-radius: 10px;
 
     &-label {
       display: flex;

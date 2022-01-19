@@ -11,6 +11,7 @@ const Index: React.FC<any> = () => {
   const [temp, setTemp] = useState('');
   const [regular, setRegular] = useState('');
   const [text, setText] = useState('');
+  const [isInputing, setIsInputing] = useState(false);
 
   const reset = () => {
     setText('');
@@ -54,7 +55,12 @@ const Index: React.FC<any> = () => {
         }}
       />
       <View className='regular__input'>
-        <View className='regular__input-content'>
+        <View
+          className={isInputing
+            ? 'regular__input-content regular__input-content--active'
+            : 'regular__input-content'
+          }
+        >
           <Input
             className='regular__input-content-comp-style'
             placeholder='请输入正则表达式...'
@@ -64,6 +70,12 @@ const Index: React.FC<any> = () => {
               let { detail: { value } } = event;
 
               setRegular(value);
+            }}
+            onFocus={() => {
+              setIsInputing(true);
+            }}
+            onBlur={() => {
+              setIsInputing(false);
             }}
           />
         </View>
