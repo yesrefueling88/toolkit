@@ -1,4 +1,5 @@
-import React, { forwardRef, memo, ReactElement, useEffect, useImperativeHandle, useState } from "react";
+import Taro from "@tarojs/taro";
+import React, { forwardRef, memo, ReactElement, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { ScrollView, View } from '@tarojs/components'
 import { createSelectorQuery } from "@utils/taro";
 import { MenuAnchorItem } from "@components/menu/menu";
@@ -24,7 +25,10 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
     },
   } = props;
 
+  const randomOffset = useRef(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  // @ts-ignore
+  const [doRefresh, setDoRefresh] = useState(0);
 
   useEffect(() => {
     // 获取所有子元素的宽高等信息
@@ -37,6 +41,12 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
         })
       }
     })
+
+    Taro.eventCenter.on('onGoToBottom', debounce(onGoToBottom, 100));
+
+    return () => {
+      Taro.eventCenter.off('onGoToBottom')
+    }
   }, []);
 
   useImperativeHandle(ref, () => ({
@@ -48,6 +58,13 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
     },
   }));
 
+  const onGoToBottom = () => {
+    onChooseMenuItem(anchorMap.size - 1);
+    randomOffset.current === 0 ? randomOffset.current = 1 : randomOffset.current = 0
+    panelsDataMap.set('currentSelectedIndex', anchorMap.size - 1);
+    panelsDataMap.set('setFinalScrollTop', (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet + randomOffset.current));
+    setDoRefresh(new Date().getTime())
+  };
 
   return (
     <View
@@ -56,17 +73,30 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
       <ScrollView
         className='c-menu-panels__scroll-view'
         scrollY
-        scrollTop={anchorMap.get(selectedIndex) != undefined ? (anchorMap.get(selectedIndex)!.top - scrollOffSet) : 0}
+        scrollTop={
+          anchorMap.get(selectedIndex) != undefined
+            ? (
+              panelsDataMap.get('currentSelectedIndex') === anchorMap.size - 1
+                ? (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet + randomOffset.current)
+                : (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet)
+            )
+            : 0
+        }
         scrollWithAnimation
         onScroll={debounce((e) => {
           let { detail: { scrollTop: top } } = e;
 
           if (panelsDataMap.get('setFinalScrollTop') != -1) {
             let gap = Math.abs(Math.floor(panelsDataMap.get('setFinalScrollTop')! - top));
-            if (gap === 0) {
+            if (gap <= 2) {
               panelsDataMap.set('setFinalScrollTop', -1);
             }
             return;
+          }
+
+          if (top > anchorMap.get(anchorMap.size - 1)!.top - scrollOffSet + 2) {
+            Taro.eventCenter.trigger('onGoToBottom');
+            return
           }
 
           // 计算当前滚动位置对对应于哪个menuItem
