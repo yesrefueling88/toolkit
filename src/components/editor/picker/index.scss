@@ -33,7 +33,12 @@
     }
 
     &-icon {
-      margin-top: 5px;
+      /* #ifdef weapp */
+      margin-top: 6px;
+      /* #endif */
+      /* #ifdef rn */
+      margin-top: 4px;
+      /* #endif */
       margin-left: 12px;
       display: flex;
       flex-direction: row;
@@ -41,7 +46,7 @@
 
       &-img {
         width: 25px;
-        height: 11px;
+        height: 14px;
       }
     }
   }

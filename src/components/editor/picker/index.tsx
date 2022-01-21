@@ -36,7 +36,7 @@ const Picker: React.FC<Props> = ({
           <View className='c-picker__content-icon'>
             <Image
               className='c-picker__content-icon-img'
-              src={require('../../../assets/images/down-arrow.png')}
+              src={require('../../../assets/images/picker.png')}
             />
           </View>
         </View>

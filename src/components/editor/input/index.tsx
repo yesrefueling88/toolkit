@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, Input as TaroInput } from '@tarojs/components'
 import './index.scss'
 
@@ -21,6 +21,7 @@ const Input: React.FC<Props> = ({
   content = '',
   onInput = () => {},
 }) => {
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <View
@@ -28,13 +29,25 @@ const Input: React.FC<Props> = ({
       style={style}
     >
       <View
-        className='c-input__label'
+        className='c-input__label-content'
         style={labelStyle}
       >
-        <Text className='c-input__label-text'>{`${label} =`}</Text>
+        <View
+          className={isActive
+            ? 'c-input__label-content-detail'
+            : 'c-input__label-content-detail'
+          }
+        >
+          <Text className='c-input__label-content-detail-text'>{`${label}`}</Text>
+        </View>
       </View>
       <View className='c-input__content'>
-        <View className='c-input__content-taro-input'>
+        <View
+          className={isActive
+            ? 'c-input__content-taro-input c-input--active'
+            : 'c-input__content-taro-input'
+          }
+        >
           <TaroInput
             className='c-input__content-taro-input-style'
             placeholderClass='c-input__content-taro-input-placeholder'
@@ -44,6 +57,12 @@ const Input: React.FC<Props> = ({
             onInput={(event) => {
               const { detail: { value } } = event;
               onInput({ content: value })
+            }}
+            onFocus={() => {
+              setIsActive(true);
+            }}
+            onBlur={() => {
+              setIsActive(false);
             }}
           />
         </View>
