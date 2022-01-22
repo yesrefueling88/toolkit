@@ -40,7 +40,7 @@ const Cube = forwardRef((props: Props, ref) => {
   return (
     <Block>
       <Input
-        label='边长（a）'
+        label='边长 (a)'
         placeholder='请输入边长'
         content={length.toString()}
         onInput={({ content }) => {

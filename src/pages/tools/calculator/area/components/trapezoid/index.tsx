@@ -62,7 +62,7 @@ const Trapezoid = forwardRef((props: Props, ref) => {
   return (
     <Block>
       <Input
-        label='上底（a）'
+        label='上底 (a)'
         placeholder='请输入上底长度'
         content={lengthA.toString()}
         onInput={({ content }) => {
@@ -70,7 +70,7 @@ const Trapezoid = forwardRef((props: Props, ref) => {
         }}
       />
       <Input
-        label='下底（b）'
+        label='下底 (b)'
         placeholder='请输入下底长度'
         content={lengthB.toString()}
         onInput={({ content }) => {
@@ -78,7 +78,7 @@ const Trapezoid = forwardRef((props: Props, ref) => {
         }}
       />
       <Input
-        label='高度（h）'
+        label='高度 (h)'
         placeholder='请输入高度'
         content={height.toString()}
         onInput={({ content }) => {

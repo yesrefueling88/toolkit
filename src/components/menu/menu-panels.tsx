@@ -26,7 +26,6 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
   } = props;
 
   const randomOffset = useRef(0);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   // @ts-ignore
   const [doRefresh, setDoRefresh] = useState(0);
 
@@ -51,20 +50,25 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
 
   useImperativeHandle(ref, () => ({
     setIndex: (index: number) => {
-      setSelectedIndex(index)
+      randomOffset.current === 0 ? randomOffset.current = 1 : randomOffset.current = 0;
+      panelsDataMap.set('currentSelectedIndex', index);
+      panelsDataMap.set('setFinalScrollTop', (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet + randomOffset.current));
+      setDoRefresh(new Date().getTime())
     },
     getIndex: () => {
-      return selectedIndex
+      return panelsDataMap.get('currentSelectedIndex')
     },
   }));
 
   const onGoToBottom = () => {
     onChooseMenuItem(anchorMap.size - 1);
-    randomOffset.current === 0 ? randomOffset.current = 1 : randomOffset.current = 0
+    randomOffset.current === 0 ? randomOffset.current = 1 : randomOffset.current = 0;
     panelsDataMap.set('currentSelectedIndex', anchorMap.size - 1);
     panelsDataMap.set('setFinalScrollTop', (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet + randomOffset.current));
     setDoRefresh(new Date().getTime())
   };
+
+  const currentIndex = panelsDataMap.get('currentSelectedIndex');
 
   return (
     <View
@@ -74,12 +78,8 @@ const MenuPanels: any = memo(forwardRef((props: Props, ref) => {
         className='c-menu-panels__scroll-view'
         scrollY
         scrollTop={
-          anchorMap.get(selectedIndex) != undefined
-            ? (
-              panelsDataMap.get('currentSelectedIndex') === anchorMap.size - 1
-                ? (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet + randomOffset.current)
-                : (anchorMap.get(panelsDataMap.get('currentSelectedIndex'))!.top - scrollOffSet)
-            )
+          anchorMap.get(currentIndex) != undefined
+            ? anchorMap.get(currentIndex)!.top - scrollOffSet + randomOffset.current
             : 0
         }
         scrollWithAnimation

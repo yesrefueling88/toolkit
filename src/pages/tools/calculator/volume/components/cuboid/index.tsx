@@ -62,7 +62,7 @@ const Cuboid = forwardRef((props: Props, ref) => {
   return (
     <Block>
       <Input
-        label='长度（a）'
+        label='长度 (a)'
         placeholder='请输入长度'
         content={length.toString()}
         onInput={({ content }) => {
@@ -70,7 +70,7 @@ const Cuboid = forwardRef((props: Props, ref) => {
         }}
       />
       <Input
-        label='宽度（b）'
+        label='宽度 (b)'
         placeholder='请输入宽度'
         content={width.toString()}
         onInput={({ content }) => {
@@ -78,7 +78,7 @@ const Cuboid = forwardRef((props: Props, ref) => {
         }}
       />
       <Input
-        label='高度（c）'
+        label='高度 (c)'
         placeholder='请输入高度'
         content={height.toString()}
         onInput={({ content }) => {

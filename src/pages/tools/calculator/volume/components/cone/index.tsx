@@ -54,7 +54,7 @@ const Cone = forwardRef((props: Props, ref) => {
   return (
     <Block>
       <Input
-        label='半径（r）'
+        label='半径 (r)'
         placeholder='请输入半径'
         content={r.toString()}
         onInput={({ content }) => {
@@ -62,7 +62,7 @@ const Cone = forwardRef((props: Props, ref) => {
         }}
       />
       <Input
-        label='高（h）'
+        label='高 (h)'
         placeholder='请输入高度'
         content={h.toString()}
         onInput={({ content }) => {

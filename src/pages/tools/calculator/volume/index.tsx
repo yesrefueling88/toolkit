@@ -118,7 +118,7 @@ const Index: React.FC<any> = () => {
             className='volume__result-label'
           >
             <Text className='volume__result-label-text'>
-              体积（V） =
+              体积 (V) =
             </Text>
           </View>
           <View className='volume__result-content'>

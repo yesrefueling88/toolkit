@@ -54,7 +54,7 @@ const Triangle = forwardRef((props: Props, ref) => {
   return (
     <Block>
       <Input
-        label='底边长（a）'
+        label='底边长 (a)'
         placeholder='请输入底边长'
         content={lengthA.toString()}
         onInput={({ content }) => {
@@ -62,7 +62,7 @@ const Triangle = forwardRef((props: Props, ref) => {
         }}
       />
       <Input
-        label='高（h）'
+        label='高 (h)'
         placeholder='请输入高'
         content={height.toString()}
         onInput={({ content }) => {

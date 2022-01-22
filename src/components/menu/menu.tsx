@@ -47,21 +47,8 @@ const Menu: any = forwardRef((props: Props, ref) => {
 
             // @ts-ignore
             menusRef.current.setIndex(itemIndex);
-            panelsDataMap.set('currentSelectedIndex', itemIndex);
-            let anchor = anchorMap.get(itemIndex);
-            anchor != undefined && panelsDataMap.set('setFinalScrollTop', anchor.top - scrollOffSet);
             // @ts-ignore
-            if (itemIndex === panelsRef.current.getIndex() && itemIndex !== currentPanelsSelectedIndex) {
-              // @ts-ignore
-              panelsRef.current.setIndex(currentPanelsSelectedIndex);
-              setTimeout(() => {
-                // @ts-ignore
-                panelsRef.current.setIndex(itemIndex)
-              }, 0)
-            } else {
-              // @ts-ignore
-              panelsRef.current.setIndex(itemIndex)
-            }
+            panelsRef.current.setIndex(itemIndex)
           }
         });
 

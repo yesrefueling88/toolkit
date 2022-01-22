@@ -68,16 +68,20 @@ const TextArea: React.FC<Props> = ({
     onClickClear()
   };
 
+  const className = disabled
+    ? 'c-text-area__content c-text-area__content--disable'
+    : (isActive
+        ? 'c-text-area__content c-text-area__content--active'
+        : 'c-text-area__content'
+    );
+
   return (
     <View
       className='c-text-area'
       style={style}
     >
       <Textarea
-        className={isActive
-          ? 'c-text-area__content c-text-area__content--active'
-          : 'c-text-area__content'
-        }
+        className={className}
         // @ts-ignore
         style={{ textAlignVertical: 'top' }}
         disabled={disabled}

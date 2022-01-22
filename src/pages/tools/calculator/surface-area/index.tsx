@@ -118,7 +118,7 @@ const Index: React.FC<any> = () => {
             className='surface-area__result-label'
           >
             <Text className='surface-area__result-label-text'>
-              表面积（S） =
+              表面积 (S) =
             </Text>
           </View>
           <View className='surface-area__result-content'>

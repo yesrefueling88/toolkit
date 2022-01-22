@@ -53,6 +53,7 @@ const Index: React.FC<any> = () => {
         return (
           <TextArea
             placeholder='无'
+            disabled
             isHidePasteBtn
             isHideClearBtn
             currentValue={text}

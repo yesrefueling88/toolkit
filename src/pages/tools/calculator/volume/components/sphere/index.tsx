@@ -40,7 +40,7 @@ const Sphere = forwardRef((props: Props, ref) => {
   return (
     <Block>
       <Input
-        label='半径（r）'
+        label='半径 (r)'
         placeholder='请输入半径'
         content={r.toString()}
         onInput={({ content }) => {
