@@ -17,12 +17,22 @@
       text-align: center;
 
       &-now-time {
-        /* #ifndef rn */
-        display: block;
-        /* #endif */
-        color: #ffffff;
-        font-size: 150px;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        &-hour, &-colon, &-min {
+          /* #ifndef rn */
+          display: block;
+          /* #endif */
+          color: #ffffff;
+          font-size: 150px;
+          text-align: center;
+        }
+
+        &--hidden {
+          opacity: 0;
+        }
       }
 
       &-today {

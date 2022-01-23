@@ -1,3 +1,4 @@
+import Taro from "@tarojs/taro";
 import React, { useEffect, useState } from "react";
 import { Textarea, View, Image, Text } from '@tarojs/components'
 import { getClipboardData, setClipboardData } from "@utils/index";
@@ -32,6 +33,24 @@ const TextArea: React.FC<Props> = ({
 }) => {
   const [value, setValue] = useState('');
   const [isActive, setIsActive] = useState(false);
+  const [isLock, setIsLock] = useState(false);
+
+  useEffect(() => {
+    const setLock = (bool) => {
+      if (bool) {
+        setIsLock(true);
+        setIsActive(false)
+      } else {
+        setIsLock(false)
+      }
+    };
+
+    Taro.eventCenter.on('teatArea_setLock', setLock);
+
+    return () => {
+      Taro.eventCenter.off('teatArea_setLock', setLock)
+    }
+  }, []);
 
   useEffect(() => {
     setValue(currentValue)
@@ -94,9 +113,17 @@ const TextArea: React.FC<Props> = ({
           setValue(content);
         }}
         onFocus={() => {
+          if (isLock) {
+            return
+          }
+
           setIsActive(true);
         }}
         onBlur={() => {
+          if (isLock) {
+            return
+          }
+
           setIsActive(false);
         }}
       />

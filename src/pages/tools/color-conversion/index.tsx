@@ -6,7 +6,7 @@ import {
   Picker,
   Input,
 } from '@components'
-import { checkNumber, RGB2Hex, isValid, toast, Hex2RGB } from "@utils/index";
+import { checkNumber, RGB2Hex, isValid, toast, Hex2RGB, setClipboardData } from "@utils/index";
 import './index.scss'
 
 const pickRange = [
@@ -183,6 +183,16 @@ const Index: React.FC<any> = () => {
                     ? { backgroundColor: result }
                     : `background-color:${result}`}
                 />
+              </View>
+              <View className='color-conver__result-copy'>
+                <Text
+                  className='color-conver__result-copy-text'
+                  onClick={() => {
+                    setClipboardData(result)
+                  }}
+                >
+                  复制
+                </Text>
               </View>
             </View>
           )

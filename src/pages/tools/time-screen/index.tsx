@@ -6,13 +6,13 @@ import './index.scss'
 
 const Index: React.FC<any> = () => {
   const [navHeight, setNavHeight] = useState(0);
-  const nowTimeRef = useRef('');
+  const nowTimeRef = useRef({ hour: '', min: '', isShowColon: false });
   const [nowTime, setNowTime] = useState(nowTimeRef.current);
   const todayRef = useRef('');
   const [today, setToday] = useState(todayRef.current);
 
-  const fotmatNum = (num: number) => {
-    return num < 10 ? `0${num}` : num
+  const fotmatNum = (num: number): string => {
+    return num < 10 ? `0${num}` : String(num)
   };
 
   useEffect(() => {
@@ -24,10 +24,11 @@ const Index: React.FC<any> = () => {
 
     const timer = setInterval(() => {
       const date = new Date();
-      const reg = /:/g;
-      nowTimeRef.current = reg.test(nowTimeRef.current)
-        ? `${fotmatNum(date.getHours())}:${fotmatNum(date.getMinutes())}`
-        : `${fotmatNum(date.getHours())}:${fotmatNum(date.getMinutes())}`;
+      nowTimeRef.current = {
+        hour: fotmatNum(date.getHours()),
+        min: fotmatNum(date.getMinutes()),
+        isShowColon: !nowTimeRef.current.isShowColon,
+      };
 
       setNowTime(nowTimeRef.current);
       const day = "星期" + "日一二三四五六".charAt(new Date().getDay())
@@ -63,11 +64,23 @@ const Index: React.FC<any> = () => {
               : ''
           }
         >
-          {!!nowTime && (
-            <Text className='time-screen__content-date-now-time'>
-              {nowTime}
+          <View className='time-screen__content-date-now-time'>
+            <Text className='time-screen__content-date-now-time-hour'>
+              {nowTime.hour}
             </Text>
-          )}
+            <Text
+              className={
+                nowTime.isShowColon
+                  ? 'time-screen__content-date-now-time-colon'
+                  : 'time-screen__content-date-now-time-colon time-screen__content-date-now-time--hidden'
+              }
+            >
+              :
+            </Text>
+            <Text className='time-screen__content-date-now-time-min'>
+              {nowTime.min}
+            </Text>
+          </View>
 
           {!!today && (
             <Text className='time-screen__content-date-today'>

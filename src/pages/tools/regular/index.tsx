@@ -1,3 +1,4 @@
+import Taro from "@tarojs/taro";
 import React, { useMemo, useState } from 'react'
 import { Input, Text, View } from '@tarojs/components'
 import {
@@ -72,9 +73,11 @@ const Index: React.FC<any> = () => {
               setRegular(value);
             }}
             onFocus={() => {
-              setIsInputing(true);
+              Taro.eventCenter.trigger('teatArea_setLock', true);
+              setIsInputing(true)
             }}
             onBlur={() => {
+              Taro.eventCenter.trigger('teatArea_setLock', false);
               setIsInputing(false);
             }}
           />
