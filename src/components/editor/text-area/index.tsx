@@ -36,6 +36,16 @@ const TextArea: React.FC<Props> = ({
   const [isLock, setIsLock] = useState(false);
 
   useEffect(() => {
+    if (disabled && IS_H5) {
+      setTimeout(() => {
+        let elements = document.getElementsByClassName('taro-textarea');
+        if (elements.length > 0) {
+          //@ts-ignore
+          elements[elements.length - 1].style.backgroundColor = '#f5f5f5'
+        }
+      }, 50)
+    }
+
     const setLock = (bool) => {
       if (bool) {
         setIsLock(true);

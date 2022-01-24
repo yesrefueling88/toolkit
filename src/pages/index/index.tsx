@@ -1,3 +1,4 @@
+import Taro from "@tarojs/taro"
 import React, { useState, useEffect } from 'react'
 import { View, Text } from '@tarojs/components'
 import {
@@ -23,6 +24,18 @@ const Index: React.FC<any> = () => {
       setNavHeight(height);
     })
   }, []);
+
+  if (IS_H5) {
+    window.addEventListener('popstate', function () {
+      Taro.showLoading({
+        title: '加载中...',
+        mask: true,
+      })
+      setTimeout(() => {
+        Taro.hideLoading();
+      }, 1000)
+    })
+  }
 
   return (
     <View className='index'>
