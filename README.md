@@ -71,7 +71,7 @@
 
 | <center>小程序</center> | <center>H5</center> | <center>React Native</center> |
 |--------------|-------|----|
-| ![](http://r69utkg6s.hn-bkt.clouddn.com/doc/weapp-qrcode-20220203.jpg) | ![](http://r69utkg6s.hn-bkt.clouddn.com/doc/h5-qrcode-20220203.jpg) | 安卓：[toolkit.apk](https://pan.baidu.com/s/1ILN1g93IaOXuiOx4JIcVmA?pwd=f4gc) |
+| ![](http://r69utkg6s.hn-bkt.clouddn.com/doc/weapp-qrcode-20220203.jpg) | ![](http://r69utkg6s.hn-bkt.clouddn.com/doc/h5-qrcode-20220204.png) | 安卓：[toolkit.apk](https://pan.baidu.com/s/1ILN1g93IaOXuiOx4JIcVmA?pwd=f4gc) |
 
 
 ## 本地运行
