@@ -5,15 +5,15 @@
 
 > 微信小程序
 
-![](http://r69utkg6s.hn-bkt.clouddn.com/doc/weapp-20220202.jpg)
+![](http://r7x8fsnpd.hn-bkt.clouddn.com/weapp-20220202.jpg)
 
 > H5
 
-![](http://r69utkg6s.hn-bkt.clouddn.com/doc/h5-20220202.jpg)
+![](http://r7x8fsnpd.hn-bkt.clouddn.com/h5-20220202.jpg)
 
 > 安卓
 
-![](http://r69utkg6s.hn-bkt.clouddn.com/doc/rn-20220202.jpg)
+![](http://r7x8fsnpd.hn-bkt.clouddn.com/rn-20220202.jpg)
 
 ### 项目技术栈
 * Taro 文档见 http://taro-docs.jd.com/taro/docs/README/index.html
@@ -71,7 +71,7 @@
 
 | <center>小程序</center> | <center>H5</center> | <center>React Native</center> |
 |--------------|-------|----|
-| ![](http://r69utkg6s.hn-bkt.clouddn.com/doc/weapp-qrcode-20220203.jpg) | ![](http://r69utkg6s.hn-bkt.clouddn.com/doc/h5-qrcode-20220204.png) | 安卓：[toolkit.apk](https://pan.baidu.com/s/1ILN1g93IaOXuiOx4JIcVmA?pwd=f4gc) |
+| ![](http://r7x8fsnpd.hn-bkt.clouddn.com/weapp-qrcode-20220203.jpg) | ![](http://r7x8fsnpd.hn-bkt.clouddn.com/h5-qrcode-20220204.png) | 安卓：[toolkit.apk](https://pan.baidu.com/s/1ILN1g93IaOXuiOx4JIcVmA?pwd=f4gc) |
 
 
 ## 本地运行
